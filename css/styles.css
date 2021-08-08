@@ -10,7 +10,7 @@ html, body {
 }
 body {
   background-attachment: fixed;
-  background-image: url(http://www.roadtripsandhikes.org/images/IMG_3348.JPG);
+  background-image: url(https://www.roadtripsandhikes.org/images/IMG_3348.JPG);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top, center;
@@ -61,16 +61,19 @@ a.header_links:hover, a.header_links:active {
 .hero_text {
   color: #fff;
   text-shadow: 4px 4px 8px #222;
-  padding-top: calc(100vh * 3/8);
-  margin-bottom: calc(100vh * 5/8);
-  width: 83vw;
+  padding: 0;
+  width: 100vw;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hero_title {
-  font-size: 60px;
+  font-size: 5.5em;
 }
 .hero_subtitle {
-  font-size: 5.5em;
+  font-size: 4.0em;
+  width: 60vw;
 }
 #hero_title_card {
   color: #fff;
