@@ -132,8 +132,8 @@ a.header_links:hover, a.header_links:active {
 }
 .spacer {
   display: block;
-  min-height: 250px;
-  height: 250px;
+  min-height: 75px;
+  height: 75px;
   width: 100%;
   margin: 0;
   padding: 0;
