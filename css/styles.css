@@ -300,6 +300,14 @@ h3 a {
     width: 90vw;
     font-weight: bold;
   }
+  .hero_subtitle {
+    width: 80vw;
+  }
+  .tiles > img, .content {
+    border-radius: 24px;
+    width: 500px;
+    height: 289px;
+  }
 }
 
 @media all and (max-width: 1200px) {
