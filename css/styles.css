@@ -212,7 +212,8 @@ a.header_links:hover, a.header_links:active {
   -moz-box-shadow:      3px 3px 5px 4px rgba(25,25,25,0.6);
   -webkit-box-shadow:   3px 3px 5px 4px rgba(25,25,25,0.6);
 }
-article, .content p {
+
+article, .content div{
   padding: 5px 20px;
 }
 .title {
@@ -268,6 +269,10 @@ h3 a {
   border-radius: 20px 0 20px 0;
   -webkit-background-clip: padding-box; /* for Safari */
   background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+#rt_tile {
+  display: none;
 }
 
 @media all and (max-width: 2400px) and (min-width: 1921px) {
@@ -328,6 +333,9 @@ h3 a {
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
     z-index: 1;
+  }
+  #rt_tile {
+    display: block;
   }
 }
 
