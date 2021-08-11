@@ -7,3 +7,24 @@ $(window).scroll(function(){
     $("#hero_title_card").css("opacity", 1.25 - $(window).scrollTop()/190);
     // console.log(1.0 - $(window).scrollTop()/600);
 });
+
+$(document).ready(function() {
+  $('#logo').hover(function() {
+    if ($(window).scrollTop() < 50) {
+      $(this).attr('src', 'https://lar-mo.com/images/lar-mo_favicon_bw.png');
+      $('#title').css("color","black");
+    };
+  },function() {
+    $(this).attr('src', 'https://lar-mo.com/images/lar-mo_favicon.png');
+    $('#title').css("color","white");
+  });
+  $('#title').hover(function() {
+    if ($(window).scrollTop() < 50) {
+      $('#logo').attr('src', 'https://lar-mo.com/images/lar-mo_favicon_bw.png');
+      $(this).css("color","black");
+    };
+  },function() {
+    $('#logo').attr('src', 'https://lar-mo.com/images/lar-mo_favicon.png');
+    $(this).css("color","white");
+  });
+});
