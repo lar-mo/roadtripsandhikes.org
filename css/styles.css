@@ -393,6 +393,9 @@ h3 a {
     font-size: 4.2em;
     width: 95vw;
   }
+  .wrapper {
+    background-image: url(https://www.roadtripsandhikes.org/images/IMG_3794_1000x1333.jpg);
+  }
 }
 /*iphone 7+ 414x605*/
 @media all and (max-width: 414px) {
