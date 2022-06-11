@@ -10,7 +10,7 @@ html, body {
 }
 body {
   background-attachment: fixed;
-  background-image: url(https://www.roadtripsandhikes.org/images/IMG_4817.JPG);
+  background-image: url(https://www.roadtripsandhikes.org/images/IMG_3395.JPG);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top, center;
@@ -77,11 +77,11 @@ a.header_links:hover, a.header_links:active {
   width: 60vw;
 }
 #hero_title_card {
-  color: #fff;
+  color: #FFF;
   position: fixed;
   left: 3.5vw;
   bottom: 7vh;
-  text-shadow: 4px 4px 8px #222;
+  text-shadow: 0px 0px 5px #000;
   z-index: 0;
   transition: 0.2s;
   font-weight: 700;
