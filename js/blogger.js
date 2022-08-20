@@ -36,7 +36,7 @@ let bloggerv3_url = 'https://api.roadtripsandhikes.org/wrapper/bloggerApiGetLate
 
       let post_title_div = document.createElement('div');
       post_title_div.setAttribute('class', "post_title");
-      post_title_div.innerHTML += "<h2>" + post_title + "</h2>";
+      post_title_div.innerHTML += "<h1>Latest Post</h1><h2>" + post_title + "</h2>";
       desc_div.appendChild(post_title_div);
 
       let pub_date_read_more_div = document.createElement('div');
