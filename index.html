@@ -10,6 +10,8 @@
     <script src="js/header-anim.js?20210811"></script>
     <script src="js/flip-card.js?20210807"></script>
     <script src="js/header-resizer.js?20210807"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js"></script>
+    <script src="js/blogger.js?modified=202208201200" async></script>
     <meta property="og:image" content="https://www.lar-mo.com/images/lar-mo-git-io-bg.jpg" />
     <meta property="og:description" content="Road Trips + Hikes" />
     <meta property="og:url" content="https://www.roadtripsandhikes.org/" />
@@ -46,7 +48,13 @@
     <div class="wrapper">
       <div class="hero">
         <div>
-          <iframe src="https://api.roadtripsandhikes.org/hiking-stats/for/larry-moiola?2022&full&rtah" style="height:700px;width:75vw;border:0;margin-bottom:30px;margin-left:auto;margin-right:auto;" allowtransparency="true"></iframe>
+          <iframe src="https://api.roadtripsandhikes.org/hiking-stats/for/larry-moiola?2022&full&rtah" id="stats_module" allowtransparency="true"></iframe>
+        </div>
+        <div>
+          <div class="blog_container container-padding">
+            <h1>Latest Post</h1>
+            <div id="blog_container"></div>
+          </div>
         </div>
       </div><!-- end hero div -->
     </div> <!-- wrapper-i end -->
@@ -165,5 +173,10 @@
       </div>
       <script src="https://formspree.io/js/formbutton-v1.0.4.min.js" defer></script>
       <script src="js/formspree-formbutton.js" defer></script>
+      <script>
+        window.onload = function(){
+            getLatestPost();
+        }
+      </script>
   </body>
 </html>

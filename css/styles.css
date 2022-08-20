@@ -23,7 +23,7 @@ h1 {
 h2 {
   color: #F9F9F9;
   margin: 0;
-  padding: 0 15px 15px;
+  /* padding: 0 15px 15px; */
   font-size: 1.2em;
 }
 header {
@@ -268,6 +268,55 @@ h3 a {
   border-radius: 20px 0 20px 0;
   -webkit-background-clip: padding-box; /* for Safari */
   background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+#stats_module {
+  height:700px;
+  width:75vw;
+  border:0;
+  margin-bottom:30px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.post_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.pub_date_read_more {
+  display: flex;
+  flex-direction: column;
+}
+.read_more {
+  padding-top: 25px;
+}
+a#read_more {
+  text-align: right;
+  color:#fff;
+}
+.post_img > img {
+  width: 400px;
+  border-radius: 6px;
+}
+
+.blog_container {
+  background-color: rgba(22,22,22,0.5);
+  display: block;
+  color: #fff;
+}
+.container-padding {
+  margin: auto;
+  width: 700px;
+  padding: 75px 250px;
+  border-radius: 50px;
+}
+.post_title {
+  padding: 20px 0 20px 0;
+  padding-left: 0 !important;
 }
 
 #rt_tile {
