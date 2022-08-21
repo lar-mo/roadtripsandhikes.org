@@ -287,7 +287,7 @@ h3 a {
   width: 100%;
 }
 
-.post_desc{
+.post_desc {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -304,11 +304,13 @@ h3 a {
 .read_more {
   padding-top: 15px;
 }
-
+#blog_section {
+  margin-bottom: 75px;
+}
 #yir2021 {
   padding-top: 25px;
 }
-a#read_more {
+#read_more {
   text-align: right;
   color:#fff;
 }
