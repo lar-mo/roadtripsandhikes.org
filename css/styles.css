@@ -465,6 +465,14 @@ h3 a {
   .wrapper {
     background-image: url(https://www.roadtripsandhikes.org/images/IMG_3794_1000x1333.jpg);
   }
+  .post_wrapper {
+    flex-direction: column;
+  }
+  .post_img > img {
+    width: 230px;
+    border-radius: 6px;
+    margin-top: 20px;
+  }
 }
 /*iphone 7+ 414x605*/
 @media all and (max-width: 414px) {
