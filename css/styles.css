@@ -332,7 +332,7 @@ h3 a {
 }
 
 .blog_section > * {
-  /* padding: 50px; */
+  margin: 75px 150px;
 }
 
 .blog_stats {
@@ -375,6 +375,9 @@ h3 a {
     border-radius: 24px;
     width: 500px;
     height: 289px;
+  }
+  .blog_section > * {
+    margin: 25px 75px;
   }
 }
 
