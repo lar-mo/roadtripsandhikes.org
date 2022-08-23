@@ -1,4 +1,5 @@
-let bloggerv3_url = 'https://api.roadtripsandhikes.org/wrapper/bloggerApiGetLatestPost/'
+const cachebuster = Math.floor(Date.now() / 1000);
+const bloggerv3_url = 'https://api.roadtripsandhikes.org/wrapper/bloggerApiGetLatestPost/?'+cachebuster;
   function getLatestPost() {
     axios.get(bloggerv3_url)
     .then(function (response) {
