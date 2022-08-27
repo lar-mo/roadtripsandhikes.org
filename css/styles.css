@@ -329,6 +329,7 @@ h3 a {
   border-radius: 50px;
   margin: auto;
   margin-bottom: 250px;
+  font-size: 1.3em;
 }
 
 .blog_section > * {
@@ -376,6 +377,9 @@ h3 a {
     border-radius: 24px;
     width: 500px;
     height: 289px;
+  }
+  .blog_section {
+    font-size: 1.1em;
   }
   .blog_section > * {
     margin: 25px 75px;
