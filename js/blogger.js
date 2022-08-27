@@ -4,7 +4,7 @@ const bloggerv3_url = 'https://api.roadtripsandhikes.org/wrapper/bloggerApiGetLa
     axios.get(bloggerv3_url)
     .then(function (response) {
       let resp = response.data;
-      console.log(resp);
+      // console.log(resp);
       let image_url = resp.latest_post.image_url;
       let post_title = resp.latest_post.title;
       let post_published = JSON.stringify(resp.latest_post.published).slice(1,11);
