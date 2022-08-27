@@ -337,6 +337,7 @@ h3 a {
 
 .blog_stats {
   /* width: 100vw; */
+  margin-bottom: 200px;
 }
 
 #rt_tile {
