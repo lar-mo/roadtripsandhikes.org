@@ -72,3 +72,4 @@ const bloggerv3_url = 'https://api.roadtripsandhikes.org/wrapper/bloggerApiGetLa
       blog_container.appendChild(post_wrapper);
     });
   }
+  getLatestPost();
