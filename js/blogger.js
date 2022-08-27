@@ -57,11 +57,16 @@ const bloggerv3_url = 'https://api.roadtripsandhikes.org/wrapper/bloggerApiGetLa
 
       let img_div = document.createElement('div');
       img_div.setAttribute('class', "post_img");
+      let img_href = document.createElement('a');
+      img_href.setAttribute('href', post_url);
+      img_href.setAttribute('target', "_blank");
 
       let img_element = document.createElement('img');
       img_element.setAttribute('src', image_url);
+      img_element.setAttribute('id', "post_image");
 
-      img_div.appendChild(img_element);
+      img_href.appendChild(img_element);
+      img_div.appendChild(img_href);
       post_wrapper.appendChild(desc_div);
       post_wrapper.appendChild(img_div);
       blog_container.appendChild(post_wrapper);
