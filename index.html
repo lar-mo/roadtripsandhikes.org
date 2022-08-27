@@ -48,7 +48,7 @@
     </div> <!-- wrapper-i end -->
 
     <div class="blog_stats">
-      <div class="blog_section">
+      <div class="blog_section hidden" id="blog_section">
         <div id="blog_container"></div>
         <div id="yir2021">
           <h1>2021 Year In Review</h1>
@@ -178,9 +178,10 @@
           var s = document.createElement('script');
           s.type = 'text/javascript';
           s.async = true;
-          s.src = 'js/blogger.js?modified=20220827';
+          s.src = 'js/blogger.js?modified=2022082701';
           var x = document.getElementsByTagName('script')[0];
           x.parentNode.insertBefore(s, x);
+          document.querySelector('#blog_section').className = 'visible blog_section';
       }
       </script>
   </body>

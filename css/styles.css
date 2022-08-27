@@ -332,6 +332,15 @@ h3 a {
   font-size: 1.3em;
 }
 
+.hidden {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 3s ease-out;
+}
+
 .blog_section > * {
   margin: 75px 115px;
 }
