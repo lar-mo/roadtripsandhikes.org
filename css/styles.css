@@ -338,7 +338,7 @@ h3 a {
 
 .visible {
   opacity: 1;
-  transition: opacity 3s ease-out;
+  transition: opacity 2s ease-out;
 }
 
 .blog_section > * {
@@ -391,7 +391,7 @@ h3 a {
     font-size: 1.1em;
   }
   .blog_section > * {
-    margin: 25px 75px;
+    margin: 20px 40px;
   }
 }
 

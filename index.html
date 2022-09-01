@@ -181,7 +181,10 @@
           s.src = 'js/blogger.js?modified=2022082701';
           var x = document.getElementsByTagName('script')[0];
           x.parentNode.insertBefore(s, x);
-          document.querySelector('#blog_section').className = 'visible blog_section';
+          setTimeout(fadeIn, 3000)
+      }
+      function fadeIn() {
+        document.querySelector('#blog_section').className = 'visible blog_section';
       }
       </script>
   </body>
