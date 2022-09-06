@@ -285,6 +285,8 @@ h3 a {
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
+  position: relative;
+  height: 100%;
 }
 
 .post_desc {
@@ -315,9 +317,10 @@ h3 a {
   padding-top: 25px;
 }
 
-.post_img > img {
+.post_img > a > img {
   width: 400px;
   border-radius: 6px;
+  margin-right: 20px;
 }
 
 .blog_section {
@@ -352,6 +355,15 @@ h3 a {
 
 #rt_tile {
   display: none;
+}
+
+#map {
+  display: flex;
+  position: relative;
+  right: auto;
+  bottom: 0;
+  width: 40%;
+  height: 300px;
 }
 
 @media all and (max-width: 2400px) and (min-width: 1921px) {
