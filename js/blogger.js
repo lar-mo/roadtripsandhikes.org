@@ -171,8 +171,11 @@ function getLatestPost() {
     img_href.appendChild(img_element);
     img_div.appendChild(img_href);
     post_wrapper.appendChild(desc_div);
-    post_wrapper.appendChild(img_div);
-    post_wrapper.appendChild(map_thumb);
+    let img_map = document.createElement('div');
+    img_map.setAttribute('id', 'img_map');
+    img_map.appendChild(img_div);
+    img_map.appendChild(map_thumb);
+    post_wrapper.appendChild(img_map);
     blog_container.appendChild(post_wrapper);
 
     var post_location_lat = resp.latest_post.post_location.lat;
