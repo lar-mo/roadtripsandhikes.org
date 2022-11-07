@@ -361,9 +361,9 @@ h3 a {
   margin-bottom: 200px;
 }
 
-#rt_tile {
+/* #rt_tile {
   display: none;
-}
+} */
 
 #map {
   display: flex;
@@ -453,9 +453,9 @@ h3 a {
     height: calc(var(--vh, 1vh) * 100);
     z-index: 1;
   }
-  #rt_tile {
+  /* #rt_tile {
     display: block;
-  }
+  } */
 }
 
 @media all and (max-width: 768px) {
