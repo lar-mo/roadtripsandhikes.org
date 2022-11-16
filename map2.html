@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <title>Points on a map</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.9.2/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id='map'></div>
+    <script>
+    // The value for 'accessToken' begins with 'pk...'
+    mapboxgl.accessToken = 'pk.eyJ1IjoibGFybW8iLCJhIjoiY2w2ZmI5N3c2MnpkbzNibjNvMzQyOHRidCJ9.waCz-RqCpy6CN4OmNPWlSA';
+    const map = new mapboxgl.Map({
+    container: 'map',
+    // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-122.486052, 37.830348],
+    zoom: 15
+    });
+
+    map.on('load', () => {
+    map.addSource('route', {
+    'type': 'geojson',
+    'data': {
+    'type': 'Feature',
+    'properties': {},
+    'geometry': {
+    'type': 'LineString',
+    'coordinates': [
+    [-122.483696, 37.833818],
+    [-122.483482, 37.833174],
+    [-122.483396, 37.8327],
+    [-122.483568, 37.832056],
+    [-122.48404, 37.831141],
+    [-122.48404, 37.830497],
+    [-122.483482, 37.82992],
+    [-122.483568, 37.829548],
+    [-122.48507, 37.829446],
+    [-122.4861, 37.828802],
+    [-122.486958, 37.82931],
+    [-122.487001, 37.830802],
+    [-122.487516, 37.831683],
+    [-122.488031, 37.832158],
+    [-122.488889, 37.832971],
+    [-122.489876, 37.832632],
+    [-122.490434, 37.832937],
+    [-122.49125, 37.832429],
+    [-122.491636, 37.832564],
+    [-122.492237, 37.833378],
+    [-122.493782, 37.833683]
+    ]
+    }
+    }
+    });
+    map.addLayer({
+        'id': 'route',
+        'type': 'line',
+        'source': 'route',
+        'layout': {
+            'line-join': 'round',
+            'line-cap': 'round'
+        },
+        'paint': {
+            'line-color': '#888',
+            'line-width': 8
+        }
+    });
+    });
+    </script>
+  </body>
+</html>
