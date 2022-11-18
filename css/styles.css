@@ -526,6 +526,9 @@ h3 a {
     border-radius: 6px;
     margin-top: 20px;
   }
+  .read_more {
+    padding-bottom: 18px;
+  }
 }
 /*iphone 7+ 414x605*/
 @media all and (max-width: 414px) {
