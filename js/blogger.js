@@ -1,6 +1,6 @@
 const cachebuster = Math.floor(Date.now() / 1000);
-// const bloggerv3_url = 'https://api.roadtripsandhikes.org/wrapper/bloggerApiGetLatestPost/?'+cachebuster;
-const bloggerv3_url = 'http://localhost:8000/wrapper/bloggerApiGetLatestPost/?'+cachebuster;
+const bloggerv3_url = 'https://api.roadtripsandhikes.org/wrapper/bloggerApiGetLatestPost/?'+cachebuster;
+// const bloggerv3_url = 'http://localhost:8000/wrapper/bloggerApiGetLatestPost/?'+cachebuster;
 
 
 function loadMap(lng,lat,name) {
