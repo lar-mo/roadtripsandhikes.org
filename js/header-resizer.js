@@ -3,6 +3,7 @@ window.onscroll = function() {scrollFunction()};
   function scrollFunction() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
     $('header').css('padding', '8px');
+    $('#logo').attr('src', 'https://lar-mo.com/images/lar-mo_favicon_old.png');
     $('#logo').css('width', '25px');
     $('header').css('box-shadow',        '3px 3px 5px 4px rgba(25,25,25,0.4)');
     $('header').css('-moz-box-shadow',   '3px 3px 5px 4px rgba(25,25,25,0.4)');
@@ -19,6 +20,7 @@ window.onscroll = function() {scrollFunction()};
     } else {
       $('header').css('padding', '19px');
     }
+    $('#logo').attr('src', 'https://lar-mo.com/images/lar-mo_favicon.png');
     $('#logo').css('width', '50px');
     $('header').css('box-shadow','');
     $('header').css('-moz-box-shadow','');
