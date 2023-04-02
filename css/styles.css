@@ -53,6 +53,7 @@ header {
 }
 .header_links {
   text-decoration: none;
+  /* text-shadow: 4px 4px 8px #222; */
 }
 a.header_links:link, a.header_links:visited {
   color: #fff;
@@ -187,6 +188,7 @@ a.header_links:hover, a.header_links:active {
 }
 .section_text {
   width: 66.67%;
+  color: #333;
   margin: 15px 75px 0;
 }
 .category_link {
