@@ -151,7 +151,7 @@ function getLatestPost() {
 
     let read_more = document.createElement('div');
     read_more.setAttribute('class', "read_more");
-    read_more.innerHTML += "<a href='" + post_url + "' target='_blank'>Read More</a>";
+    read_more.innerHTML += "<a href='" + post_url + "' target='_blank'>View Post</a>";
     pub_date_read_more_div.appendChild(read_more);
 
     desc_div.appendChild(pub_date_read_more_div);
