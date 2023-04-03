@@ -141,20 +141,20 @@ function getLatestPost() {
     post_title_div.innerHTML += "<h1>Latest Post</h1><h2>" + post_title + "</h2>";
     desc_div.appendChild(post_title_div);
 
-    let pub_date_read_more_div = document.createElement('div');
-    pub_date_read_more_div.setAttribute('class', "pub_date_read_more");
+    let pub_date_view_post_div = document.createElement('div');
+    pub_date_view_post_div.setAttribute('class', "pub_date_view_post");
 
     let pub_date = document.createElement('div');
     pub_date.setAttribute('class', "pub_date");
     pub_date.innerHTML += "<b>Published</b>: " + date_pub_mmddyy;
-    pub_date_read_more_div.appendChild(pub_date);
+    pub_date_view_post_div.appendChild(pub_date);
 
     let read_more = document.createElement('div');
-    read_more.setAttribute('class', "read_more");
+    read_more.setAttribute('class', "view_post");
     read_more.innerHTML += "<a href='" + post_url + "' target='_blank'>View Post</a>";
-    pub_date_read_more_div.appendChild(read_more);
+    pub_date_view_post_div.appendChild(read_more);
 
-    desc_div.appendChild(pub_date_read_more_div);
+    desc_div.appendChild(pub_date_view_post_div);
 
     let img_div = document.createElement('div');
     img_div.setAttribute('class', "post_img");
