@@ -149,10 +149,10 @@ function getLatestPost() {
     pub_date.innerHTML += "<b>Published</b>: " + date_pub_mmddyy;
     pub_date_view_post_div.appendChild(pub_date);
 
-    let read_more = document.createElement('div');
-    read_more.setAttribute('class', "view_post");
-    read_more.innerHTML += "<a href='" + post_url + "' target='_blank'>View Post</a>";
-    pub_date_view_post_div.appendChild(read_more);
+    let view_post = document.createElement('div');
+    view_post.setAttribute('class', "view_post");
+    view_post.innerHTML += "<a href='" + post_url + "' target='_blank'>View Post</a>";
+    pub_date_view_post_div.appendChild(view_post);
 
     desc_div.appendChild(pub_date_view_post_div);
 
