@@ -1,6 +1,6 @@
 const cachebuster = Math.floor(Date.now() / 1000);
-const bloggerv3_url = 'https://api.roadtripsandhikes.org/wrapper/bloggerApiGetLatestPost/?'+cachebuster;
-// const bloggerv3_url = 'http://localhost:8000/wrapper/bloggerApiGetLatestPost/?'+cachebuster;
+// const bloggerv3_url = 'https://api.roadtripsandhikes.org/wrapper/bloggerApiGetLatestPost/?'+cachebuster;
+const bloggerv3_url = 'http://localhost:8000/wrapper/bloggerApiGetLatestPost/?'+cachebuster;
 
 
 function loadMap(lng,lat,name) {
@@ -111,7 +111,7 @@ function getLatestPost() {
     let post_published = JSON.stringify(resp.latest_post.published).slice(1,11);
     let post_url = resp.latest_post.post_url;
     var date_pub = new Date(post_published);
-    var month = date_pub.getMonth();
+    var month = date_pub.getUTCMonth();
     var months = {
       0: "January",
       1: "Februrary",
