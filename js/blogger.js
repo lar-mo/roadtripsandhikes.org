@@ -2,10 +2,10 @@ const cachebuster = Math.floor(Date.now() / 1000);
 const bloggerv3_url = 'https://api.roadtripsandhikes.org/wrapper/bloggerApiGetLatestPost/?'+cachebuster;
 // const bloggerv3_url = 'http://localhost:8000/wrapper/bloggerApiGetLatestPost/?'+cachebuster;
 
-
-function loadMap(lng,lat,name) {
+function loadMap(lng,lat,name,token) {
 // The value for 'accessToken' begins with 'pk...'
-  mapboxgl.accessToken = 'pk.eyJ1IjoibGFybW8iLCJhIjoiY2w2ZmI5N3c2MnpkbzNibjNvMzQyOHRidCJ9.waCz-RqCpy6CN4OmNPWlSA';
+  // mapboxgl.accessToken = 'pk.eyJ1IjoibGFybW8iLCJhIjoiY2w2ZmI5N3c2MnpkbzNibjNvMzQyOHRidCJ9.waCz-RqCpy6CN4OmNPWlSA';
+  mapboxgl.accessToken = token;
   const map = new mapboxgl.Map({
     container: 'map',
     // Replace YOUR_STYLE_URL with your style URL.
@@ -178,12 +178,13 @@ function getLatestPost() {
     post_wrapper.appendChild(img_map);
     blog_container.appendChild(post_wrapper);
 
-    var post_location_lat = resp.latest_post.post_location.lat;
-    var post_location_lng = resp.latest_post.post_location.lng;
-    var post_location_name = resp.latest_post.post_location.name;
+    const post_location_lat = resp.latest_post.post_location.lat;
+    const post_location_lng = resp.latest_post.post_location.lng;
+    const post_location_name = resp.latest_post.post_location.name;
+    const mapbox_api = resp.latest_post.post_location.mapbox_api;
     console.log(post_location_lng, post_location_lat);
     // setTimeout(function() {
-    loadMap(post_location_lng,post_location_lat,post_location_name);
+    loadMap(post_location_lng,post_location_lat,post_location_name,mapbox_api);
     // }, 4000)
   });
 }
