@@ -4,7 +4,6 @@ const bloggerv3_url = 'https://api.roadtripsandhikes.org/wrapper/bloggerApiGetLa
 
 function loadMap(lng,lat,name,token) {
 // The value for 'accessToken' begins with 'pk...'
-  // mapboxgl.accessToken = 'pk.eyJ1IjoibGFybW8iLCJhIjoiY2w2ZmI5N3c2MnpkbzNibjNvMzQyOHRidCJ9.waCz-RqCpy6CN4OmNPWlSA';
   mapboxgl.accessToken = token;
   const map = new mapboxgl.Map({
     container: 'map',
