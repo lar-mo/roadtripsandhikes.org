@@ -310,18 +310,18 @@ h3 a {
   justify-content: space-between;
 }
 
-.pub_date_read_more {
+.pub_date_view_post {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
 }
 
-.read_more {
+.view_post {
   padding-top: 15px;
 }
 
-.read_more > a {
+.view_post > a {
   text-align: right;
   color:#fff;
 }
