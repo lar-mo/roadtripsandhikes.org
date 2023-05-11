@@ -18,7 +18,7 @@ html, body {
 .backgroundFixed {
   /* background: linear-gradient(160deg, #2db4a8 0%, #13af3d 100%); */
   /* background-image: url(https://www.roadtripsandhikes.org/images/IMG_3348.JPG); */
-  background-image: url(https://lar-mo.com/images/rtah_Neahkahnie.jpg);
+  background-image: url(/images/IMG_3890.jpg);
   background-size: 100vw 100vh;
   position: fixed;
   top: 0;

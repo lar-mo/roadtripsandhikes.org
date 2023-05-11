@@ -180,11 +180,11 @@ function getLatestPost() {
     const post_location_lat = resp.latest_post.post_location.lat;
     const post_location_lng = resp.latest_post.post_location.lng;
     const post_location_name = resp.latest_post.post_location.name;
-    const mapbox_api = resp.latest_post.mapbox_api;
+    const mba = resp.latest_post.mba;
 
     console.log(post_location_lng, post_location_lat);
     // setTimeout(function() {
-    loadMap(post_location_lng,post_location_lat,post_location_name,mapbox_api);
+    loadMap(post_location_lng,post_location_lat,post_location_name,mba);
     // }, 4000)
   });
 }
