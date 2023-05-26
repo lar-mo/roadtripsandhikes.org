@@ -236,7 +236,11 @@ a.site_link:link, a.site_link:visited {
   color: #333;
   text-decoration: underline;
 }
-a.site_link:hover, a.site_link:active {
+a.hdr_site_link:link, a.hdr_site_link:visited {
+  color: #333;
+  text-decoration: none;
+}
+a.site_link:hover, a.site_link:active, a.hdr_site_link:hover, a.hdr_site_link:active {
   color: #ff6633;
   text-decoration: none;
 }
