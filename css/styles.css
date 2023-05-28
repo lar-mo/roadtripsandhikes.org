@@ -18,7 +18,7 @@ html, body {
 .backgroundFixed {
   /* background: linear-gradient(160deg, #2db4a8 0%, #13af3d 100%); */
   /* background-image: url(https://www.roadtripsandhikes.org/images/IMG_3348.JPG); */
-  background-image: url(/images/IMG_3890.jpg);
+  background-image: url(https://www.roadtripsandhikes.org/images/IMG_3890.jpg);
   background-size: 100vw 100vh;
   position: fixed;
   top: 0;
@@ -555,7 +555,12 @@ h3 a {
     padding-bottom: 15px;
   }
   .backgroundFixed {
-    background-image: url(https://www.roadtripsandhikes.org/images/IMG_3348-1000x2000.jpg);
+    /* background-image: url(https://www.roadtripsandhikes.org/images/IMG_3348-1000x2000.jpg); */
+    background-image: url(https://www.roadtripsandhikes.org/images/IMG_3890-1000x2000.jpg);
+  }
+  .hero_text {
+    padding-top: calc(100vh * 1.75/8);
+    margin-bottom: calc(100vh * 6.25/8);
   }
 }
 
