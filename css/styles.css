@@ -557,7 +557,8 @@ h3 a {
   }
   .backgroundFixed {
     /* background-image: url(https://www.roadtripsandhikes.org/images/IMG_3348-1000x2000.jpg); */
-    background-image: url(https://www.roadtripsandhikes.org/images/IMG_3890-1000x2000.jpg);
+    /* background-image: url(https://www.roadtripsandhikes.org/images/IMG_3890-1000x2000.jpg); */
+    background-image: url(https://www.roadtripsandhikes.org/images/IMG_5648-1000x2000.jpg);
   }
   .hero_text {
     padding-top: calc(100vh * 1.75/8);
