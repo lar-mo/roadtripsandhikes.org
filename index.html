@@ -199,7 +199,8 @@
           x.parentNode.insertBefore(s, x);
           setTimeout(fadeIn, 1500)
 
-          let randomNum = Math.round(Math.random());
+          // let randomNum = Math.round(Math.random()); // 0, 1
+          let randomNum = Math.floor(Math.random() * 4); // 0, 1, 2, 3
           const anotherElement = document.getElementById("backgroundFixed");
           if (randomNum == 1) {
             document.getElementById('hero_title_card').innerHTML = "Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
@@ -207,6 +208,24 @@
             const mediaQuery = window.matchMedia('(max-width: 414px)');
             if (mediaQuery.matches == true) {
               anotherElement.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/IMG_5648-1000x2000.jpg")';
+            }
+          } else if (randomNum == 2) {
+            // no-name-lake-bg.jpg
+            // no-name-lake-bg-1000x2000.jpg
+            document.getElementById('hero_title_card').innerHTML = "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon";
+            anotherElement.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg.jpg")';
+            const mediaQuery = window.matchMedia('(max-width: 414px)');
+            if (mediaQuery.matches == true) {
+              anotherElement.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg")';
+            }
+          } else if (randomNum == 3) {
+            // msh-summit-bg.jpg
+            // msh-summit-bg-1000x2000.jpg
+            document.getElementById('hero_title_card').innerHTML = "Mount St. Helens Summit / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
+            anotherElement.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg")';
+            const mediaQuery = window.matchMedia('(max-width: 414px)');
+            if (mediaQuery.matches == true) {
+              anotherElement.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg")';
             }
           }
       }
