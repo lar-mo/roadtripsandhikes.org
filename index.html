@@ -27,7 +27,7 @@
     <link rel="shortcut icon" href="https://lar-mo.com/images/lar-mo_favicon.png" />
     <link rel="preload" as="image" href="https://lar-mo.com/images/lar-mo_favicon_bw.png">
     <link rel="preload" as="image" href="https://lar-mo.com/images/lar-mo_favicon_old.png">
-    <link rel="stylesheet" href="css/styles.css?202309092">
+    <link rel="stylesheet" href="css/styles.css?20251001">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
   </head>
   <body>
@@ -38,7 +38,7 @@
         <a href="#top" id="title" class="header_links">Road Trips & Hikes</a>
       </h1>
     </header>
-    <div class="backgroundFixed"></div>
+    <div id="backgroundFixed"></div>
     <div class="wrapper">
       <div class="hero">
         <div class="hero_text">
@@ -48,8 +48,9 @@
         <div id="hero_title_card">
           <!-- Tatoosh Range from Plummer Peak<br>Mt. Rainier National Park -->
           <!-- North Trail, Neahkahnie Mountain<br>Oregon Coast -->
-          Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest
+          <!-- Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest -->
           <!-- No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon -->
+          Cascade Head Marine Reserve<br>Lincoln City, Oregon
         </div>
       </div><!-- end hero div -->
     </div> <!-- wrapper-i end -->
@@ -197,6 +198,17 @@
           var x = document.getElementsByTagName('script')[0];
           x.parentNode.insertBefore(s, x);
           setTimeout(fadeIn, 1500)
+
+          let randomNum = Math.round(Math.random());
+          const anotherElement = document.getElementById("backgroundFixed");
+          if (randomNum == 1) {
+            document.getElementById('hero_title_card').innerHTML = "Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
+            anotherElement.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/IMG_5648.jpg")';
+            const mediaQuery = window.matchMedia('(max-width: 414px)');
+            if (mediaQuery.matches == true) {
+              anotherElement.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/IMG_5648-1000x2000.jpg")';
+            }
+          }
       }
       function fadeIn() {
         document.querySelector('#blog_section').className = 'visible blog_section';
