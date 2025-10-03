@@ -16,12 +16,12 @@ html, body {
   background-position: top, center;
 } */
 #backgroundFixed {
-    /* background: linear-gradient(160deg, #2db4a8 0%, #13af3d 100%); */
+     background: linear-gradient(180deg, #ccc 0%, #aaa 100%);
     /* background-image: url(https://www.roadtripsandhikes.org/images/IMG_3348.JPG); */
     /* background-image: url(https://www.roadtripsandhikes.org/images/IMG_3890.jpg); */
     /* background-image: url(https://www.roadtripsandhikes.org/images/IMG_5648.jpg); */
     /* background-image: url(/Users/larrymoiola/Code/GitHub/roadtripsandhikes.org/imgs/IMG_5635.JPG); */
-    background-image: url(https://www.roadtripsandhikes.org/images/IMG_5635.JPG);
+    /*background-image: url(https://www.roadtripsandhikes.org/images/IMG_5635.JPG);*/
     background-size: 100vw 100vh;
     position: fixed;
     top: 0;
@@ -581,7 +581,7 @@ h3 a {
         /* background-image: url(https://www.roadtripsandhikes.org/images/IMG_3890-1000x2000.jpg); */
         /* background-image: url(https://www.roadtripsandhikes.org/images/IMG_5648-1000x2000.jpg); */
         /* background-image: url(/Users/larrymoiola/Code/GitHub/roadtripsandhikes.org/imgs/IMG_5635-1000x2000.jpg); */
-        background-image: url(https://www.roadtripsandhikes.org/images/IMG_5635-1000x2000.jpg);
+        /*background-image: url(https://www.roadtripsandhikes.org/images/IMG_5635-1000x2000.jpg);*/
     }
     .hero_text {
         padding-top: calc(100vh * 1.75 / 8);

@@ -27,7 +27,15 @@
     <link rel="shortcut icon" href="https://lar-mo.com/images/lar-mo_favicon.png" />
     <link rel="preload" as="image" href="https://lar-mo.com/images/lar-mo_favicon_bw.png">
     <link rel="preload" as="image" href="https://lar-mo.com/images/lar-mo_favicon_old.png">
-    <link rel="stylesheet" href="css/styles.css?20251001">
+    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/IMG_5635.JPG">
+    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/IMG_5635-1000x2000.jpg">
+    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/IMG_5648.jpg">
+    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/IMG_5648-1000x2000.jpg">
+    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/no-name-lake-bg.jpg">
+    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg">
+    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg">
+    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg">
+    <link rel="stylesheet" href="css/styles.css?202510022">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
   </head>
   <body>
@@ -50,7 +58,7 @@
           <!-- North Trail, Neahkahnie Mountain<br>Oregon Coast -->
           <!-- Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest -->
           <!-- No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon -->
-          Cascade Head Marine Reserve<br>Lincoln City, Oregon
+          <!--Cascade Head Marine Reserve<br>Lincoln City, Oregon-->
         </div>
       </div><!-- end hero div -->
     </div> <!-- wrapper-i end -->
@@ -201,30 +209,38 @@
 
           // Serve one of 4 background images
           let randomNum = Math.floor(Math.random() * 4); // 0, 1, 2, 3 ; Math.round(Math.random()); // 0, 1
-          const anotherElement = document.getElementById("backgroundFixed");
+          const backgroundFixed = document.getElementById("backgroundFixed");
           switch (randomNum) {
+            case 0:
+              document.getElementById('hero_title_card').innerHTML = "Cascade Head Marine Reserve<br>Lincoln City, Oregon";
+              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/IMG_5635.JPG")';
+              var mediaQuery = window.matchMedia('(max-width: 414px)');
+              if (mediaQuery.matches) {
+                backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/IMG_5635-1000x2000.jpg")';
+              }
+              break;
             case 1:
               document.getElementById('hero_title_card').innerHTML = "Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
-              anotherElement.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/IMG_5648.jpg")';
+              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/IMG_5648.jpg")';
               var mediaQuery = window.matchMedia('(max-width: 414px)');
-              if (mediaQuery.matches == true) {
-                anotherElement.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/IMG_5648-1000x2000.jpg")';
+              if (mediaQuery.matches) {
+                backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/IMG_5648-1000x2000.jpg")';
               }
               break;
             case 2:
               document.getElementById('hero_title_card').innerHTML = "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon";
-              anotherElement.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg.jpg")';
+              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg.jpg")';
               var mediaQuery = window.matchMedia('(max-width: 414px)');
-              if (mediaQuery.matches == true) {
-                anotherElement.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg")';
+              if (mediaQuery.matches) {
+                backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg")';
               }
               break;
             case 3:
               document.getElementById('hero_title_card').innerHTML = "Mount St. Helens Summit / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
-              anotherElement.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg")';
+              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg")';
               var mediaQuery = window.matchMedia('(max-width: 414px)');
-              if (mediaQuery.matches == true) {
-                anotherElement.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg")';
+              if (mediaQuery.matches) {
+                backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg")';
               }
               break;
           }
