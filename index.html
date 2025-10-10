@@ -48,10 +48,10 @@
             </h1>
         </div>
         <div class="bg_switcher">
-            <a name="bg-1" onclick="changeBackgroundImage(1);">&#9725;</a>
-            <a name="bg-2" onclick="changeBackgroundImage(2);">&#9725;</a>
-            <a name="bg-3" onclick="changeBackgroundImage(3);">&#9725;</a>
-            <a name="bg-4" onclick="changeBackgroundImage(4);">&#9725;</a>
+            <a name="bg-1" class="bg_switcher_buttons" onclick="changeBackgroundImage(1);">&#9724;</a>
+            <a name="bg-2" class="bg_switcher_buttons" onclick="changeBackgroundImage(2);">&#9724;</a>
+            <a name="bg-3" class="bg_switcher_buttons" onclick="changeBackgroundImage(3);">&#9724;</a>
+            <a name="bg-4" class="bg_switcher_buttons" onclick="changeBackgroundImage(4);">&#9724;</a>
         </div>
     </header>
     <div id="backgroundFixed"></div>
@@ -255,6 +255,10 @@
         document.querySelector('#blog_section').className = 'visible blog_section';
       }
       function changeBackgroundImage(bgId) {
+        let bg_switcher_button1 = document.querySelector('.bg_switcher_buttons:nth-child(1)');
+        let bg_switcher_button2 = document.querySelector('.bg_switcher_buttons:nth-child(2)');
+        let bg_switcher_button3 = document.querySelector('.bg_switcher_buttons:nth-child(3)');
+        let bg_switcher_button4 = document.querySelector('.bg_switcher_buttons:nth-child(4)');
         switch (bgId) {
           case 1:
             document.getElementById('hero_title_card').innerHTML = "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon";
@@ -263,6 +267,10 @@
             if (mediaQuery.matches) {
               backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg")';
             }
+            bg_switcher_button1.style.color = 'rgba(255, 102, 51, .90)';
+            bg_switcher_button2.style.color = '#FFF';
+            bg_switcher_button3.style.color = '#FFF';
+            bg_switcher_button4.style.color = '#FFF';
             break;
           case 2:
             document.getElementById('hero_title_card').innerHTML = "Mount St. Helens Summit / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
@@ -271,6 +279,10 @@
             if (mediaQuery.matches) {
               backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg")';
             }
+            bg_switcher_button1.style.color = '#FFF';
+            bg_switcher_button2.style.color = 'rgba(255, 102, 51, .90)';
+            bg_switcher_button3.style.color = '#FFF';
+            bg_switcher_button4.style.color = '#FFF';
             break;
           case 3:
             document.getElementById('hero_title_card').innerHTML = "Cascade Head Marine Reserve<br>Lincoln City, Oregon";
@@ -279,6 +291,10 @@
             if (mediaQuery.matches) {
               backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/lincoln-city-1000x2000.jpg")';
             }
+            bg_switcher_button1.style.color = '#FFF';
+            bg_switcher_button2.style.color = '#FFF';
+            bg_switcher_button3.style.color = 'rgba(255, 102, 51, .90)';
+            bg_switcher_button4.style.color = '#FFF';
             break;
           case 4:
             document.getElementById('hero_title_card').innerHTML = "Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
@@ -287,6 +303,10 @@
             if (mediaQuery.matches) {
               backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-ne-side-1000x2000.jpg")';
             }
+            bg_switcher_button1.style.color = '#FFF';
+            bg_switcher_button2.style.color = '#FFF';
+            bg_switcher_button3.style.color = '#FFF';
+            bg_switcher_button4.style.color = 'rgba(255, 102, 51, .90)';
             break;
         }
       }

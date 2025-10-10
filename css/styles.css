@@ -77,7 +77,15 @@ a.header_links:active {
     margin-right: 50px;
     position:static;
     text-align: right;
+}
+.bg_switcher_buttons {
+    font-size: 25px;
+    /*color: rgba(255, 102, 51, .90);*/
     color: #FFF;
+    cursor: pointer;
+}
+.bg_switcher_buttons:nth-child(4) {
+    color: rgba(255, 102, 51, .90);
 }
 .hero {
     height: 140vh; /* Fallback for browsers that do not support Custom Properties */
