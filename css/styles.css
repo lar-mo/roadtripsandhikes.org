@@ -16,8 +16,8 @@ html, body {
   background-position: top, center;
 } */
 #backgroundFixed {
-     /*background: linear-gradient(180deg, #ccc 0%, #aaa 100%);*/
-     background-image: url(https://www.roadtripsandhikes.org/images/msh-ne-side.jpg);
+    /*background: linear-gradient(180deg, #ccc 0%, #aaa 100%);*/
+    background-image: url(https://www.roadtripsandhikes.org/images/msh-ne-side.jpg);
     background-size: 100vw 100vh;
     position: fixed;
     top: 0;
@@ -584,7 +584,7 @@ h3 a {
     .post_img {
         padding-bottom: 15px;
     }
-    .backgroundFixed {
+    #backgroundFixed {
          background-image: url(https://www.roadtripsandhikes.org/images/msh-ne-side-1000x2000.jpg);
     }
     .hero_text {
