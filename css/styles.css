@@ -548,6 +548,9 @@ h3 a {
     .section_text {
         margin: 15px 35px 0;
     }
+    .bg_switcher {
+        visibility:hidden;
+    }
 }
 
 @media all and (max-width: 576px) {
