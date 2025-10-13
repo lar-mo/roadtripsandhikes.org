@@ -75,7 +75,7 @@ a.header_links:active {
 }
 .bg_switcher {
     margin-right: 50px;
-    position:static;
+    position: static;
     text-align: right;
 }
 .bg_switcher_buttons {
@@ -84,8 +84,14 @@ a.header_links:active {
     color: #FFF;
     cursor: pointer;
 }
-.bg_switcher_buttons:nth-child(4) {
+.bg_switcher_buttons:nth-child(1) {
     color: rgba(255, 102, 51, .90);
+}
+.big_squares {
+    display: inline-block;
+}
+.small_squares {
+    display: none;
 }
 .hero {
     height: 140vh; /* Fallback for browsers that do not support Custom Properties */
@@ -143,7 +149,7 @@ a.header_links:active {
     -moz-box-shadow: 3px 3px 5px 4px rgba(25, 25, 25, 0.6);
     -webkit-box-shadow: 3px 3px 5px 4px rgba(25, 25, 25, 0.6);
 }
-.banner {
+/*.banner {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -153,7 +159,7 @@ a.header_links:active {
     padding: 20px;
     text-shadow: 0 0;
     color: #515151;
-}
+}*/
 .center_text {
     text-align: center;
 }
@@ -163,6 +169,7 @@ a.header_links:active {
     align-items: flex-start;
     justify-content: space-around;
     flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.0);
 }
 .spacer {
     display: block;
@@ -485,9 +492,15 @@ h3 a {
         box-sizing: border-box;
         font-size: 90%;
     }
-    /* .wrapper {
-    background-image: url(https://www.roadtripsandhikes.org/images/IMG_3348.JPG);
-  } */
+    /*.wrapper {
+        background-image: url(https://www.roadtripsandhikes.org/images/IMG_3348.JPG);
+    }*/
+    .big_squares {
+        display: none;
+    }
+    .small_squares {
+        display: inline-block;
+    }
 }
 
 @media all and (max-width: 992px) {
@@ -510,6 +523,16 @@ h3 a {
     /* #rt_tile {
     display: block;
   } */
+  .bg_switcher_buttons {
+      font-size: 20px;
+      color: #CCC;
+  }
+  .big_squares {
+      display: none;
+  }
+  .small_squares {
+      display: inline-block;
+  }
 }
 
 @media all and (max-width: 768px) {
@@ -548,8 +571,11 @@ h3 a {
     .section_text {
         margin: 15px 35px 0;
     }
-    .bg_switcher {
-        visibility:hidden;
+    .big_squares {
+        display: none;
+    }
+    .small_squares {
+        display: inline-block;
     }
 }
 
@@ -563,9 +589,9 @@ h3 a {
         font-size: 4.2em;
         width: 95vw;
     }
-    /* .wrapper {
-    background-image: url(https://www.roadtripsandhikes.org/images/IMG_3794_1000x1333.jpg);
-  } */
+    /*.wrapper {
+        background: #FFF;
+    }*/
     .post_wrapper {
         flex-direction: column;
     }
@@ -576,6 +602,12 @@ h3 a {
     }
     .view_post {
         padding-bottom: 18px;
+    }
+    .big_squares {
+        display: none;
+    }
+    .small_squares {
+        display: inline-block;
     }
 }
 /*iphone 7+ 414x605*/
@@ -604,7 +636,16 @@ h3 a {
     }
     .bg_switcher {
         margin-right: 25px;
-        visibility:hidden;
+    }
+    .bg_switcher_buttons {
+        font-size: 15px;
+        /*color: #CCC;*/
+    }
+    .big_squares {
+        display: none;
+    }
+    .small_squares {
+        display: inline-block;
     }
 }
 

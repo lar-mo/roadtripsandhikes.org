@@ -37,7 +37,7 @@
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg">
-    <link rel="stylesheet" href="css/styles.css?202510107">
+    <link rel="stylesheet" href="css/styles.css?20251012">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
   </head>
   <body>
@@ -50,10 +50,14 @@
             </h1>
         </div>
         <div class="bg_switcher">
-            <a name="bg-1" class="bg_switcher_buttons" onclick="changeBackgroundImage(1);">&#9724;</a>
-            <a name="bg-2" class="bg_switcher_buttons" onclick="changeBackgroundImage(2);">&#9724;</a>
-            <a name="bg-3" class="bg_switcher_buttons" onclick="changeBackgroundImage(3);">&#9724;</a>
-            <a name="bg-4" class="bg_switcher_buttons" onclick="changeBackgroundImage(4);">&#9724;</a>
+            <a name="bg-1" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImage(1);">&#9724;</a>
+            <a name="bg-2" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImage(2);">&#9724;</a>
+            <a name="bg-3" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImage(3);">&#9724;</a>
+            <a name="bg-4" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImage(4);">&#9724;</a>
+            <a name="bg-1" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(1);">&#x25FD;</a>
+            <a name="bg-2" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(2);">&#x25FD;</a>
+            <a name="bg-3" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(3);">&#x25FD;</a>
+            <a name="bg-4" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(4);">&#x25FD;</a>
         </div>
     </header>
     <div id="backgroundFixed"></div>
@@ -69,9 +73,9 @@
            Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest
           <!-- No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon -->
           <!--Cascade Head Marine Reserve<br>Lincoln City, Oregon-->
-        </div>
+        </div><!--end hero_title_card -->
       </div><!-- end hero div -->
-    </div> <!-- wrapper-i end -->
+    </div><!-- end wrapper -->
 
     <div class="blog_stats">
       <div class="blog_section hidden" id="blog_section">
@@ -207,6 +211,11 @@
     <script src="https://formspree.io/js/formbutton-v1.0.4.min.js" defer></script>
     <script src="js/formspree-formbutton.js" defer></script>
     <script type="text/javascript">
+      var bg_switcher_button1 = document.querySelector('.bg_switcher_buttons:nth-child(1)');
+      var bg_switcher_button2 = document.querySelector('.bg_switcher_buttons:nth-child(2)');
+      var bg_switcher_button3 = document.querySelector('.bg_switcher_buttons:nth-child(3)');
+      var bg_switcher_button4 = document.querySelector('.bg_switcher_buttons:nth-child(4)');
+
       window.onload = function() {
           var s = document.createElement('script');
           s.type = 'text/javascript';
@@ -253,21 +262,19 @@
           //     break;
           // }
       }
+
       function fadeIn() {
         document.querySelector('#blog_section').className = 'visible blog_section';
       }
+
       function changeBackgroundImage(bgId) {
-        let bg_switcher_button1 = document.querySelector('.bg_switcher_buttons:nth-child(1)');
-        let bg_switcher_button2 = document.querySelector('.bg_switcher_buttons:nth-child(2)');
-        let bg_switcher_button3 = document.querySelector('.bg_switcher_buttons:nth-child(3)');
-        let bg_switcher_button4 = document.querySelector('.bg_switcher_buttons:nth-child(4)');
         switch (bgId) {
           case 1:
-            document.getElementById('hero_title_card').innerHTML = "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon";
-            backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg.jpg")';
+            document.getElementById('hero_title_card').innerHTML = "Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
+            backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-ne-side.jpg")';
             var mediaQuery = window.matchMedia('(max-width: 414px)');
             if (mediaQuery.matches) {
-              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg")';
+              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-ne-side-1000x2000.jpg")';
             }
             bg_switcher_button1.style.color = 'rgba(255, 102, 51, .90)';
             bg_switcher_button2.style.color = '#FFF';
@@ -275,11 +282,11 @@
             bg_switcher_button4.style.color = '#FFF';
             break;
           case 2:
-            document.getElementById('hero_title_card').innerHTML = "Mount St. Helens Summit / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
-            backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg")';
+            document.getElementById('hero_title_card').innerHTML = "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon";
+            backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg.jpg")';
             var mediaQuery = window.matchMedia('(max-width: 414px)');
             if (mediaQuery.matches) {
-              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg")';
+              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg")';
             }
             bg_switcher_button1.style.color = '#FFF';
             bg_switcher_button2.style.color = 'rgba(255, 102, 51, .90)';
@@ -287,11 +294,11 @@
             bg_switcher_button4.style.color = '#FFF';
             break;
           case 3:
-            document.getElementById('hero_title_card').innerHTML = "Cascade Head Marine Reserve<br>Lincoln City, Oregon";
-            backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/lincoln-city.jpg")';
+            document.getElementById('hero_title_card').innerHTML = "Mount St. Helens Summit / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
+            backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg")';
             var mediaQuery = window.matchMedia('(max-width: 414px)');
             if (mediaQuery.matches) {
-              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/lincoln-city-1000x2000.jpg")';
+              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg")';
             }
             bg_switcher_button1.style.color = '#FFF';
             bg_switcher_button2.style.color = '#FFF';
@@ -299,11 +306,11 @@
             bg_switcher_button4.style.color = '#FFF';
             break;
           case 4:
-            document.getElementById('hero_title_card').innerHTML = "Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
-            backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-ne-side.jpg")';
+            document.getElementById('hero_title_card').innerHTML = "Cascade Head Marine Reserve<br>Lincoln City, Oregon";
+            backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/lincoln-city.jpg")';
             var mediaQuery = window.matchMedia('(max-width: 414px)');
             if (mediaQuery.matches) {
-              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-ne-side-1000x2000.jpg")';
+              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/lincoln-city-1000x2000.jpg")';
             }
             bg_switcher_button1.style.color = '#FFF';
             bg_switcher_button2.style.color = '#FFF';
