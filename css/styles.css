@@ -80,7 +80,6 @@ a.header_links:active {
 }
 .bg_switcher_buttons {
     font-size: 25px;
-    /*color: rgba(255, 102, 51, .90);*/
     color: #FFF;
     cursor: pointer;
 }
@@ -478,6 +477,10 @@ h3 a {
     }
     .blog_section > * {
         margin: 20px 40px;
+    }
+    .big_squares {
+        padding: 2px;
+        font-size: 1.2em;
     }
 }
 
