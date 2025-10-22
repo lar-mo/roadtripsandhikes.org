@@ -17,7 +17,7 @@ html, body {
 } */
 #backgroundFixed {
     /*background: linear-gradient(180deg, #ccc 0%, #aaa 100%);*/
-    background-image: url(https://www.roadtripsandhikes.org/images/msh-ne-side.jpg);
+    background-image: url(https://www.roadtripsandhikes.org/images/fort-rock.jpg);
     background-size: 100vw 100vh;
     position: fixed;
     top: 0;
@@ -631,7 +631,7 @@ h3 a {
         padding-bottom: 15px;
     }
     #backgroundFixed {
-         background-image: url(https://www.roadtripsandhikes.org/images/msh-ne-side-1000x2000.jpg);
+         background-image: url(https://www.roadtripsandhikes.org/images/fort-rock-1000x2000.jpg);
     }
     .hero_text {
         padding-top: calc(100vh * 1.75 / 8);

@@ -29,6 +29,8 @@
     <link rel="shortcut icon" href="https://lar-mo.com/images/lar-mo_favicon.png" />
     <link rel="preload" as="image" href="https://lar-mo.com/images/lar-mo_favicon_bw.png">
     <link rel="preload" as="image" href="https://lar-mo.com/images/lar-mo_favicon_old.png">
+    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/fort-rock.jpg">
+    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/fort-rock-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/lincoln-city.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/lincoln-city-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-ne-side.jpg">
@@ -37,7 +39,7 @@
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg">
-    <link rel="stylesheet" href="css/styles.css?20251019">
+    <link rel="stylesheet" href="css/styles.css?20251022">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
   </head>
   <body>
@@ -54,10 +56,12 @@
             <a name="bg-2" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImage(2);">&#9724;</a>
             <a name="bg-3" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImage(3);">&#9724;</a>
             <a name="bg-4" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImage(4);">&#9724;</a>
-            <a name="bg-1" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(1);">&#x25FD;</a>
-            <a name="bg-2" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(2);">&#x25FD;</a>
-            <a name="bg-3" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(3);">&#x25FD;</a>
-            <a name="bg-4" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(4);">&#x25FD;</a>
+            <a name="bg-5" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImage(5);">&#9724;</a>
+            <a name="bg-1b" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(1);">&#x25FD;</a>
+            <a name="bg-2b" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(2);">&#x25FD;</a>
+            <a name="bg-3b" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(3);">&#x25FD;</a>
+            <a name="bg-4b" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(4);">&#x25FD;</a>
+            <a name="bg-5b" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(5);">&#x25FD;</a>
         </div>
     </header>
     <div id="backgroundFixed"></div>
@@ -70,9 +74,10 @@
         <div id="hero_title_card">
           <!-- Tatoosh Range from Plummer Peak<br>Mt. Rainier National Park -->
           <!-- North Trail, Neahkahnie Mountain<br>Oregon Coast -->
-           Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest
+          <!-- Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest -->
           <!-- No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon -->
-          <!--Cascade Head Marine Reserve<br>Lincoln City, Oregon-->
+          <!-- Cascade Head Marine Reserve<br>Lincoln City, Oregon -->
+           Fort Rock State Natural Area<br>Lake County, Oregon
         </div><!--end hero_title_card -->
       </div><!-- end hero div -->
     </div><!-- end wrapper -->
@@ -215,6 +220,7 @@
       var bg_switcher_button2 = document.querySelector('.bg_switcher_buttons:nth-child(2)');
       var bg_switcher_button3 = document.querySelector('.bg_switcher_buttons:nth-child(3)');
       var bg_switcher_button4 = document.querySelector('.bg_switcher_buttons:nth-child(4)');
+      var bg_switcher_button5 = document.querySelector('.bg_switcher_buttons:nth-child(5)');
 
       window.onload = function() {
           var s = document.createElement('script');
@@ -270,18 +276,32 @@
       function changeBackgroundImage(bgId) {
         switch (bgId) {
           case 1:
+            document.getElementById('hero_title_card').innerHTML = "Fort Rock State Natural Area<br>Lake County, Oregon";
+            backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/fort-rock.jpg")';
+            var mediaQuery = window.matchMedia('(max-width: 414px)');
+            if (mediaQuery.matches) {
+              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/fort-rock-1000x2000.jpg")';
+            }
+            bg_switcher_button1.style.color = 'rgba(255, 102, 51, .90)';
+            bg_switcher_button2.style.color = '#FFF';
+            bg_switcher_button3.style.color = '#FFF';
+            bg_switcher_button4.style.color = '#FFF';
+            bg_switcher_button5.style.color = '#FFF';
+            break;
+          case 2:
             document.getElementById('hero_title_card').innerHTML = "Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
             backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-ne-side.jpg")';
             var mediaQuery = window.matchMedia('(max-width: 414px)');
             if (mediaQuery.matches) {
               backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-ne-side-1000x2000.jpg")';
             }
-            bg_switcher_button1.style.color = 'rgba(255, 102, 51, .90)';
-            bg_switcher_button2.style.color = '#FFF';
+            bg_switcher_button1.style.color = '#FFF';
+            bg_switcher_button2.style.color = 'rgba(255, 102, 51, .90)';
             bg_switcher_button3.style.color = '#FFF';
             bg_switcher_button4.style.color = '#FFF';
+            bg_switcher_button5.style.color = '#FFF';
             break;
-          case 2:
+          case 3:
             document.getElementById('hero_title_card').innerHTML = "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon";
             backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg.jpg")';
             var mediaQuery = window.matchMedia('(max-width: 414px)');
@@ -289,11 +309,12 @@
               backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg")';
             }
             bg_switcher_button1.style.color = '#FFF';
-            bg_switcher_button2.style.color = 'rgba(255, 102, 51, .90)';
-            bg_switcher_button3.style.color = '#FFF';
+            bg_switcher_button2.style.color = '#FFF';
+            bg_switcher_button3.style.color = 'rgba(255, 102, 51, .90)';
             bg_switcher_button4.style.color = '#FFF';
+            bg_switcher_button5.style.color = '#FFF';
             break;
-          case 3:
+          case 4:
             document.getElementById('hero_title_card').innerHTML = "Mount St. Helens Summit / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
             backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg")';
             var mediaQuery = window.matchMedia('(max-width: 414px)');
@@ -302,10 +323,11 @@
             }
             bg_switcher_button1.style.color = '#FFF';
             bg_switcher_button2.style.color = '#FFF';
-            bg_switcher_button3.style.color = 'rgba(255, 102, 51, .90)';
-            bg_switcher_button4.style.color = '#FFF';
+            bg_switcher_button3.style.color = '#FFF';
+            bg_switcher_button4.style.color = 'rgba(255, 102, 51, .90)';
+            bg_switcher_button5.style.color = '#FFF';
             break;
-          case 4:
+          case 5:
             document.getElementById('hero_title_card').innerHTML = "Cascade Head Marine Reserve<br>Lincoln City, Oregon";
             backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/lincoln-city.jpg")';
             var mediaQuery = window.matchMedia('(max-width: 414px)');
@@ -315,7 +337,8 @@
             bg_switcher_button1.style.color = '#FFF';
             bg_switcher_button2.style.color = '#FFF';
             bg_switcher_button3.style.color = '#FFF';
-            bg_switcher_button4.style.color = 'rgba(255, 102, 51, .90)';
+            bg_switcher_button4.style.color = '#FFF';
+            bg_switcher_button5.style.color = 'rgba(255, 102, 51, .90)';
             break;
         }
       }
