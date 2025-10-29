@@ -26,12 +26,6 @@ html, body {
     width: 100vw;
     z-index: -1000;
 }
-/* Styles for portrait orientation */
-/*@media (orientation: portrait) {
-    #backgroundFixed {
-        background-size: cover;
-    }
-}*/
 h1 {
     color: #f9f9f9;
     margin: 0;
@@ -510,6 +504,13 @@ h3 a {
     .small_squares {
         display: inline-block;
     }
+    /* Styles for portrait orientation */
+    @media (orientation: portrait) {
+        #backgroundFixed {
+            background-size: cover;
+            /*background-image: url(https://www.roadtripsandhikes.org/images/fort-rock-1000x2000.jpg);*/
+        }
+    }
 }
 
 @media all and (max-width: 992px) {
@@ -541,6 +542,13 @@ h3 a {
   }
   .small_squares {
       display: inline-block;
+  }
+  /* Styles for portrait orientation */
+  @media (orientation: portrait) {
+      #backgroundFixed {
+          background-size: cover;
+          background-image: url(https://www.roadtripsandhikes.org/images/fort-rock-1000x2000.jpg);
+      }
   }
 }
 
