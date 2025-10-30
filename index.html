@@ -29,6 +29,8 @@
     <link rel="shortcut icon" href="https://lar-mo.com/images/lar-mo_favicon.png" />
     <link rel="preload" as="image" href="https://lar-mo.com/images/lar-mo_favicon_bw.png">
     <link rel="preload" as="image" href="https://lar-mo.com/images/lar-mo_favicon_old.png">
+    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/beacon-rock.jpg">
+    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/beacon-rock-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/fort-rock.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/fort-rock-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/lincoln-city.jpg">
@@ -39,7 +41,7 @@
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg">
-    <link rel="stylesheet" href="css/styles.css?202510242">
+    <link rel="stylesheet" href="css/styles.css?20251029">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
   </head>
   <body>
@@ -77,7 +79,8 @@
           <!-- Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest -->
           <!-- No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon -->
           <!-- Cascade Head Marine Reserve<br>Lincoln City, Oregon -->
-           Fort Rock State Natural Area<br>Lake County, Oregon
+           <!--Fort Rock State Natural Area<br>Lake County, Oregon-->
+           Columbia River Gorge<br>from Beacon Rock, Washington
         </div><!--end hero_title_card -->
       </div><!-- end hero div -->
     </div><!-- end wrapper -->
@@ -274,26 +277,27 @@
       }
 
       function changeBackgroundImage(bgId) {
+        let randomNum = Math.round(Math.random()); // 0, 1 // Math.floor(Math.random() * 4); // 0, 1, 2, 3 ;
         switch (bgId) {
           case 1:
+            document.getElementById('hero_title_card').innerHTML = "Columbia River Gorge<br>from Beacon Rock, Washington";
+            backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/beacon-rock.jpg")';
+            var mediaQuery = window.matchMedia('(max-width: 414px)');
+            if (mediaQuery.matches) {
+              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/beacon-rock-1000x2000.jpg")';
+            }
+            bg_switcher_button1.style.color = '#FFF';
+            bg_switcher_button2.style.color = '#FFF';
+            bg_switcher_button3.style.color = '#FFF';
+            bg_switcher_button4.style.color = 'rgba(255, 102, 51, .90)';
+            // bg_switcher_button5.style.color = '#FFF';
+            break;
+          case 2:
             document.getElementById('hero_title_card').innerHTML = "Fort Rock State Natural Area<br>Lake County, Oregon";
             backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/fort-rock.jpg")';
             var mediaQuery = window.matchMedia('(max-width: 414px)');
             if (mediaQuery.matches) {
               backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/fort-rock-1000x2000.jpg")';
-            }
-            bg_switcher_button1.style.color = 'rgba(255, 102, 51, .90)';
-            bg_switcher_button2.style.color = '#FFF';
-            bg_switcher_button3.style.color = '#FFF';
-            bg_switcher_button4.style.color = '#FFF';
-            // bg_switcher_button5.style.color = '#FFF';
-            break;
-          case 2:
-            document.getElementById('hero_title_card').innerHTML = "Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
-            backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-ne-side.jpg")';
-            var mediaQuery = window.matchMedia('(max-width: 414px)');
-            if (mediaQuery.matches) {
-              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-ne-side-1000x2000.jpg")';
             }
             bg_switcher_button1.style.color = '#FFF';
             bg_switcher_button2.style.color = 'rgba(255, 102, 51, .90)';
@@ -302,20 +306,34 @@
             // bg_switcher_button5.style.color = '#FFF';
             break;
           case 3:
-            document.getElementById('hero_title_card').innerHTML = "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon";
-            backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg.jpg")';
-            var mediaQuery = window.matchMedia('(max-width: 414px)');
-            if (mediaQuery.matches) {
-              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg")';
+            if (randomNum == 0) {
+              document.getElementById('hero_title_card').innerHTML = "Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
+              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-ne-side.jpg")';
+              var mediaQuery = window.matchMedia('(max-width: 414px)');
+              if (mediaQuery.matches) {
+                backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-ne-side-1000x2000.jpg")';
+              }
+              bg_switcher_button1.style.color = '#FFF';
+              bg_switcher_button2.style.color = '#FFF';
+              bg_switcher_button3.style.color = 'rgba(255, 102, 51, .90)';
+              bg_switcher_button4.style.color = '#FFF';
+              // bg_switcher_button5.style.color = '#FFF';
+              break;
+            } else {
+              document.getElementById('hero_title_card').innerHTML = "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon";
+              backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg.jpg")';
+              var mediaQuery = window.matchMedia('(max-width: 414px)');
+              if (mediaQuery.matches) {
+                backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg")';
+              }
+              bg_switcher_button1.style.color = '#FFF';
+              bg_switcher_button2.style.color = '#FFF';
+              bg_switcher_button3.style.color = 'rgba(255, 102, 51, .90)';
+              bg_switcher_button4.style.color = '#FFF';
+              // bg_switcher_button5.style.color = '#FFF';
+              break;
             }
-            bg_switcher_button1.style.color = '#FFF';
-            bg_switcher_button2.style.color = '#FFF';
-            bg_switcher_button3.style.color = 'rgba(255, 102, 51, .90)';
-            bg_switcher_button4.style.color = '#FFF';
-            // bg_switcher_button5.style.color = '#FFF';
-            break;
           case 4:
-            let randomNum = Math.round(Math.random()); // 0, 1 // Math.floor(Math.random() * 4); // 0, 1, 2, 3 ;
             if (randomNum == 0) {
               document.getElementById('hero_title_card').innerHTML = "Mount St. Helens Summit / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest";
               backgroundFixed.style.backgroundImage = 'url("https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg")';
