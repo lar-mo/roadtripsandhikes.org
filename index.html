@@ -72,12 +72,6 @@
           <div class="hero_subtitle center_text">Hi, I'm Larry Moiola. I travel & hike to find awesome places to photograph and write about.</div>
         </div><!-- end hero_text div -->
         <div id="hero_title_card">
-          <!-- Tatoosh Range from Plummer Peak<br>Mt. Rainier National Park -->
-          <!-- North Trail, Neahkahnie Mountain<br>Oregon Coast -->
-          <!-- Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest -->
-          <!-- No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon -->
-          <!-- Cascade Head Marine Reserve<br>Lincoln City, Oregon -->
-           <!--Fort Rock State Natural Area<br>Lake County, Oregon-->
            Columbia River Gorge<br>from Beacon Rock, Washington
         </div><!--end hero_title_card -->
       </div><!-- end hero div -->
@@ -140,18 +134,6 @@
           <p><a href="http://blog.roadtripsandhikes.org/" class="site_link" target="_blank">Visit Site</a></p>
         </p>
       </div>
-
-      <!-- <div class="tiles">
-          <img src="https://www.roadtripsandhikes.org/images/rtah_facebook_thumb.png"/>
-      </div>
-      <div class="content">
-        <div class="close_button">☒</div>
-        <p>
-          <span class="title">Facebook</span>
-          <article>My trip reports. Photos. Road trip & hiking related articles.</article>
-          <p><a href="https://www.facebook.com/roadtripsandhikes/" class="site_link" target="_blank">Visit Site</a></p>
-        </p>
-      </div> -->
 
       <div class="tiles">
           <img src="https://www.roadtripsandhikes.org/images/rtah_bluesky_thumb.png"/>
@@ -218,18 +200,6 @@
     <script src="js/formspree-formbutton.js" defer></script>
     <script type="text/javascript">
 
-      // var bg_switcher_button1 = document.querySelector('.bg_switcher_buttons:nth-child(1)');
-      // var bg_switcher_button2 = document.querySelector('.bg_switcher_buttons:nth-child(2)');
-      // var bg_switcher_button3 = document.querySelector('.bg_switcher_buttons:nth-child(3)');
-      // var bg_switcher_button4 = document.querySelector('.bg_switcher_buttons:nth-child(4)');
-
-      // const buttons = {
-      //   1: bg_switcher_button1,  // if these are already globals
-      //   2: bg_switcher_button2,
-      //   3: bg_switcher_button3,
-      //   4: bg_switcher_button4
-      // };
-
       const buttons = {
         1: document.querySelector('.bg_switcher_buttons:nth-child(1)'),
         2: document.querySelector('.bg_switcher_buttons:nth-child(2)'),
@@ -293,36 +263,6 @@
       const BASE_URL = "https://www.roadtripsandhikes.org/images/";
       const ACTIVE_COLOR = 'rgba(255, 102, 51, .90)';
       const INACTIVE_COLOR = '#FFF';
-
-      // function changeBackgroundImage(bgId) {
-      //   // Get the background config (handle random selection if it's an array)
-      //   let bgConfig = backgrounds[bgId];
-      //   if (Array.isArray(bgConfig)) {
-      //     const randomIndex = Math.floor(Math.random() * bgConfig.length);
-      //     bgConfig = bgConfig[randomIndex];
-      //   }
-
-      //   if (!bgConfig) {
-      //     console.error(`Invalid background ID: ${bgId}`);
-      //     return;
-      //   }
-
-      //   // Update title
-      //   document.getElementById('hero_title_card').innerHTML = bgConfig.title;
-
-      //   // Update background image based on screen size
-      //   const isMobile = window.matchMedia('(max-width: 414px)').matches;
-      //   const imageFile = isMobile ? bgConfig.mobile : bgConfig.desktop;
-      //   backgroundFixed.style.backgroundImage = `url("${BASE_URL}${imageFile}")`;
-
-      //   // Update button colors
-      //   [1, 2, 3, 4].forEach(id => {
-      //     const button = window[`bg_switcher_button${id}`];
-      //     if (button) {
-      //       button.style.color = id === bgId ? ACTIVE_COLOR : INACTIVE_COLOR;
-      //     }
-      //   });
-      // }
 
       // Optional: Even cleaner if you can pass button elements instead of globals
       function changeBackgroundImageV2(bgId, buttons = {}) {
