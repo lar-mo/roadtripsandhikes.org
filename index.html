@@ -54,16 +54,14 @@
             </h1>
         </div>
         <div class="bg_switcher">
-            <a name="bg-1" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImage(1);">&#9724;</a>
-            <a name="bg-2" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImage(2);">&#9724;</a>
-            <a name="bg-3" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImage(3);">&#9724;</a>
-            <a name="bg-4" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImage(4);">&#9724;</a>
-            <!--<a name="bg-5" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImage(5);">&#9724;</a>-->
-            <a name="bg-1b" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(1);">&#x25FD;</a>
-            <a name="bg-2b" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(2);">&#x25FD;</a>
-            <a name="bg-3b" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(3);">&#x25FD;</a>
-            <a name="bg-4b" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(4);">&#x25FD;</a>
-            <!--<a name="bg-5b" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImage(5);">&#x25FD;</a>-->
+            <a id="bg1big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageV2(1,buttons);">&#9724;</a>
+            <a id="bg2big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageV2(2,buttons);">&#9724;</a>
+            <a id="bg3big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageV2(3,buttons);">&#9724;</a>
+            <a id="bg4big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageV2(4,buttons);">&#9724;</a>
+            <a id="bg1small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageV2(1,buttons);">&#x25FD;</a>
+            <a id="bg2small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageV2(2,buttons);">&#x25FD;</a>
+            <a id="bg3small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageV2(3,buttons);">&#x25FD;</a>
+            <a id="bg4small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageV2(4,buttons);">&#x25FD;</a>
         </div>
     </header>
     <div id="backgroundFixed"></div>
@@ -219,10 +217,25 @@
     <script src="https://formspree.io/js/formbutton-v1.0.4.min.js" defer></script>
     <script src="js/formspree-formbutton.js" defer></script>
     <script type="text/javascript">
-      var bg_switcher_button1 = document.querySelector('.bg_switcher_buttons:nth-child(1)');
-      var bg_switcher_button2 = document.querySelector('.bg_switcher_buttons:nth-child(2)');
-      var bg_switcher_button3 = document.querySelector('.bg_switcher_buttons:nth-child(3)');
-      var bg_switcher_button4 = document.querySelector('.bg_switcher_buttons:nth-child(4)');
+
+      // var bg_switcher_button1 = document.querySelector('.bg_switcher_buttons:nth-child(1)');
+      // var bg_switcher_button2 = document.querySelector('.bg_switcher_buttons:nth-child(2)');
+      // var bg_switcher_button3 = document.querySelector('.bg_switcher_buttons:nth-child(3)');
+      // var bg_switcher_button4 = document.querySelector('.bg_switcher_buttons:nth-child(4)');
+
+      // const buttons = {
+      //   1: bg_switcher_button1,  // if these are already globals
+      //   2: bg_switcher_button2,
+      //   3: bg_switcher_button3,
+      //   4: bg_switcher_button4
+      // };
+
+      const buttons = {
+        1: document.querySelector('.bg_switcher_buttons:nth-child(1)'),
+        2: document.querySelector('.bg_switcher_buttons:nth-child(2)'),
+        3: document.querySelector('.bg_switcher_buttons:nth-child(3)'),
+        4: document.querySelector('.bg_switcher_buttons:nth-child(4)')
+      };
 
       window.onload = function() {
         var s = document.createElement('script');
@@ -281,18 +294,45 @@
       const ACTIVE_COLOR = 'rgba(255, 102, 51, .90)';
       const INACTIVE_COLOR = '#FFF';
 
-      function changeBackgroundImage(bgId) {
+      // function changeBackgroundImage(bgId) {
+      //   // Get the background config (handle random selection if it's an array)
+      //   let bgConfig = backgrounds[bgId];
+      //   if (Array.isArray(bgConfig)) {
+      //     const randomIndex = Math.floor(Math.random() * bgConfig.length);
+      //     bgConfig = bgConfig[randomIndex];
+      //   }
+
+      //   if (!bgConfig) {
+      //     console.error(`Invalid background ID: ${bgId}`);
+      //     return;
+      //   }
+
+      //   // Update title
+      //   document.getElementById('hero_title_card').innerHTML = bgConfig.title;
+
+      //   // Update background image based on screen size
+      //   const isMobile = window.matchMedia('(max-width: 414px)').matches;
+      //   const imageFile = isMobile ? bgConfig.mobile : bgConfig.desktop;
+      //   backgroundFixed.style.backgroundImage = `url("${BASE_URL}${imageFile}")`;
+
+      //   // Update button colors
+      //   [1, 2, 3, 4].forEach(id => {
+      //     const button = window[`bg_switcher_button${id}`];
+      //     if (button) {
+      //       button.style.color = id === bgId ? ACTIVE_COLOR : INACTIVE_COLOR;
+      //     }
+      //   });
+      // }
+
+      // Optional: Even cleaner if you can pass button elements instead of globals
+      function changeBackgroundImageV2(bgId, buttons = {}) {
         // Get the background config (handle random selection if it's an array)
         let bgConfig = backgrounds[bgId];
         if (Array.isArray(bgConfig)) {
-          const randomIndex = Math.floor(Math.random() * bgConfig.length);
-          bgConfig = bgConfig[randomIndex];
+          bgConfig = bgConfig[Math.floor(Math.random() * bgConfig.length)];
         }
 
-        if (!bgConfig) {
-          console.error(`Invalid background ID: ${bgId}`);
-          return;
-        }
+        if (!bgConfig) return;
 
         // Update title
         document.getElementById('hero_title_card').innerHTML = bgConfig.title;
@@ -303,29 +343,6 @@
         backgroundFixed.style.backgroundImage = `url("${BASE_URL}${imageFile}")`;
 
         // Update button colors
-        [1, 2, 3, 4].forEach(id => {
-          const button = window[`bg_switcher_button${id}`];
-          if (button) {
-            button.style.color = id === bgId ? ACTIVE_COLOR : INACTIVE_COLOR;
-          }
-        });
-      }
-
-      // Optional: Even cleaner if you can pass button elements instead of globals
-      function changeBackgroundImageV2(bgId, buttons = {}) {
-        let bgConfig = backgrounds[bgId];
-        if (Array.isArray(bgConfig)) {
-          bgConfig = bgConfig[Math.floor(Math.random() * bgConfig.length)];
-        }
-
-        if (!bgConfig) return;
-
-        document.getElementById('hero_title_card').innerHTML = bgConfig.title;
-
-        const isMobile = window.matchMedia('(max-width: 414px)').matches;
-        const imageFile = isMobile ? bgConfig.mobile : bgConfig.desktop;
-        backgroundFixed.style.backgroundImage = `url("${BASE_URL}${imageFile}")`;
-
         Object.entries(buttons).forEach(([id, button]) => {
           button.style.color = Number(id) === bgId ? ACTIVE_COLOR : INACTIVE_COLOR;
         });
