@@ -54,14 +54,14 @@
             </h1>
         </div>
         <div class="bg_switcher">
-            <a id="bg1big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageV2(1,buttons);">&#9724;</a>
-            <a id="bg2big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageV2(2,buttons);">&#9724;</a>
-            <a id="bg3big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageV2(3,buttons);">&#9724;</a>
-            <a id="bg4big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageV2(4,buttons);">&#9724;</a>
-            <a id="bg1small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageV2(1,buttons);">&#x25FD;</a>
-            <a id="bg2small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageV2(2,buttons);">&#x25FD;</a>
-            <a id="bg3small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageV2(3,buttons);">&#x25FD;</a>
-            <a id="bg4small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageV2(4,buttons);">&#x25FD;</a>
+            <a id="bg1big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageCrossfade(1,buttons);">&#9724;</a>
+            <a id="bg2big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageCrossfade(2,buttons);">&#9724;</a>
+            <a id="bg3big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageCrossfade(3,buttons);">&#9724;</a>
+            <a id="bg4big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageCrossfade(4,buttons);">&#9724;</a>
+            <a id="bg1small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(1,buttons);">&#x25FD;</a>
+            <a id="bg2small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(2,buttons);">&#x25FD;</a>
+            <a id="bg3small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(3,buttons);">&#x25FD;</a>
+            <a id="bg4small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(4,buttons);">&#x25FD;</a>
         </div>
     </header>
     <div id="backgroundFixed"></div>
@@ -281,6 +281,83 @@
         const isMobile = window.matchMedia('(max-width: 414px)').matches;
         const imageFile = isMobile ? bgConfig.mobile : bgConfig.desktop;
         backgroundFixed.style.backgroundImage = `url("${BASE_URL}${imageFile}")`;
+
+        // Update button colors
+        Object.entries(buttons).forEach(([id, button]) => {
+          button.style.color = Number(id) === bgId ? ACTIVE_COLOR : INACTIVE_COLOR;
+        });
+      }
+      // OPTION 2: Simple fade-out/fade-in (V2)
+      function changeBackgroundImageV3(bgId, buttons = {}) {
+        let bgConfig = backgrounds[bgId];
+        if (Array.isArray(bgConfig)) {
+          bgConfig = bgConfig[Math.floor(Math.random() * bgConfig.length)];
+        }
+
+        if (!bgConfig) return;
+
+        // Fade out
+        backgroundFixed.classList.add('fade-out');
+
+        // Wait for fade-out to complete, then change image and fade in
+        setTimeout(() => {
+          document.getElementById('hero_title_card').innerHTML = bgConfig.title;
+
+          const isMobile = window.matchMedia('(max-width: 414px)').matches;
+          const imageFile = isMobile ? bgConfig.mobile : bgConfig.desktop;
+          backgroundFixed.style.backgroundImage = `url("${BASE_URL}${imageFile}")`;
+
+          Object.entries(buttons).forEach(([id, button]) => {
+            button.style.color = Number(id) === bgId ? ACTIVE_COLOR : INACTIVE_COLOR;
+          });
+
+          // Fade back in
+          backgroundFixed.classList.remove('fade-out');
+        }, 900); // Match this to your CSS transition duration
+      }
+      // OPTION 3: Cross-fade with overlay (V2) - smoother, no flash
+      function changeBackgroundImageCrossfade(bgId, buttons = {}) {
+        let bgConfig = backgrounds[bgId];
+        if (Array.isArray(bgConfig)) {
+          bgConfig = bgConfig[Math.floor(Math.random() * bgConfig.length)];
+        }
+
+        if (!bgConfig) return;
+
+        // Update title immediately
+        document.getElementById('hero_title_card').innerHTML = bgConfig.title;
+
+        const isMobile = window.matchMedia('(max-width: 414px)').matches;
+        const imageFile = isMobile ? bgConfig.mobile : bgConfig.desktop;
+        const newImageUrl = `url("${BASE_URL}${imageFile}")`;
+
+        // Create a temporary overlay div for the new image
+        const overlay = document.createElement('div');
+        overlay.style.position = 'absolute';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.backgroundImage = newImageUrl;
+        overlay.style.backgroundSize = '100vw 100vh';
+        overlay.style.backgroundPosition = 'center';
+        overlay.style.opacity = '0';
+        overlay.style.transition = 'opacity 0.6s ease-in-out';
+        overlay.style.zIndex = '1';
+
+        backgroundFixed.style.position = 'relative';
+        backgroundFixed.appendChild(overlay);
+
+        // Trigger fade-in
+        setTimeout(() => {
+          overlay.style.opacity = '1';
+        }, 10);
+
+        // After fade completes, swap images and remove overlay
+        setTimeout(() => {
+          backgroundFixed.style.backgroundImage = newImageUrl;
+          backgroundFixed.removeChild(overlay);
+        }, 650);
 
         // Update button colors
         Object.entries(buttons).forEach(([id, button]) => {
