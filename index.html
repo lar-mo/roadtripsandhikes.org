@@ -54,14 +54,14 @@
             </h1>
         </div>
         <div class="bg_switcher">
-            <a id="bg1big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageV2(1,buttons);">&#9724;</a>
-            <a id="bg2big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageV2(2,buttons);">&#9724;</a>
-            <a id="bg3big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageV2(3,buttons);">&#9724;</a>
-            <a id="bg4big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageV2(4,buttons);">&#9724;</a>
-            <a id="bg1small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageV2(1,buttons);">&#x25FD;</a>
-            <a id="bg2small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageV2(2,buttons);">&#x25FD;</a>
-            <a id="bg3small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageV2(3,buttons);">&#x25FD;</a>
-            <a id="bg4small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageV2(4,buttons);">&#x25FD;</a>
+            <a id="bg1big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageCrossfade(1,buttons);">&#9724;</a>
+            <a id="bg2big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageCrossfade(2,buttons);">&#9724;</a>
+            <a id="bg3big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageCrossfade(3,buttons);">&#9724;</a>
+            <a id="bg4big" class="bg_switcher_buttons big_squares" onclick="changeBackgroundImageCrossfade(4,buttons);">&#9724;</a>
+            <a id="bg1small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(1,buttons);">&#x25FD;</a>
+            <a id="bg2small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(2,buttons);">&#x25FD;</a>
+            <a id="bg3small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(3,buttons);">&#x25FD;</a>
+            <a id="bg4small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(4,buttons);">&#x25FD;</a>
         </div>
     </header>
     <div id="backgroundFixed"></div>
@@ -345,7 +345,7 @@
         overlay.style.transition = 'opacity 0.6s ease-in-out';
         overlay.style.zIndex = '1';
 
-        backgroundFixed.style.position = 'relative';
+        backgroundFixed.style.position = 'fixed';
         backgroundFixed.appendChild(overlay);
 
         // Trigger fade-in
