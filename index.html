@@ -41,7 +41,7 @@
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg">
-    <link rel="stylesheet" href="css/styles.css?202511021">
+    <link rel="stylesheet" href="css/styles.css?202511022">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
   </head>
   <body>
@@ -54,18 +54,10 @@
             </h1>
         </div>
         <div class="bg_switcher">
-            <!--<a id="bg1large" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(1,buttons);"><img src="https://www.roadtripsandhikes.org/images/active.png"></a>-->
-            <!--<a id="bg2large" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(2,buttons);"><img src="https://www.roadtripsandhikes.org/images/inactive.png"></a>-->
-            <!--<a id="bg3large" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(3,buttons);"><img src="https://www.roadtripsandhikes.org/images/inactive.png"></a>-->
-            <!--<a id="bg4large" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(4,buttons);"><img src="https://www.roadtripsandhikes.org/images/inactive.png"></a>-->
-            <a id="bg1large" class="bg_switcher_buttons large_squares" onclick="changeBackgroundImageCrossfade(1,buttons);">&#9724;</a>
-            <a id="bg2large" class="bg_switcher_buttons large_squares" onclick="changeBackgroundImageCrossfade(2,buttons);">&#9724;</a>
-            <a id="bg3large" class="bg_switcher_buttons large_squares" onclick="changeBackgroundImageCrossfade(3,buttons);">&#9724;</a>
-            <a id="bg4large" class="bg_switcher_buttons large_squares" onclick="changeBackgroundImageCrossfade(4,buttons);">&#9724;</a>
-            <a id="bg1small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(1,buttons);">&#x25FD;</a>
-            <a id="bg2small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(2,buttons);">&#x25FD;</a>
-            <a id="bg3small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(3,buttons);">&#x25FD;</a>
-            <a id="bg4small" class="bg_switcher_buttons small_squares" onclick="changeBackgroundImageCrossfade(4,buttons);">&#x25FD;</a>
+            <a id="bg_switcher_button1" class="bg_switcher_buttons" onclick="changeBackgroundImageCrossfade(1,buttons);"><img src="https://www.roadtripsandhikes.org/images/active.png"></a>
+            <a id="bg_switcher_button2" class="bg_switcher_buttons" onclick="changeBackgroundImageCrossfade(2,buttons);"><img src="https://www.roadtripsandhikes.org/images/inactive.png"></a>
+            <a id="bg_switcher_button3" class="bg_switcher_buttons" onclick="changeBackgroundImageCrossfade(3,buttons);"><img src="https://www.roadtripsandhikes.org/images/inactive.png"></a>
+            <a id="bg_switcher_button4" class="bg_switcher_buttons" onclick="changeBackgroundImageCrossfade(4,buttons);"><img src="https://www.roadtripsandhikes.org/images/inactive.png"></a>
         </div>
     </header>
     <div id="backgroundFixed"></div>
@@ -204,11 +196,18 @@
     <script src="js/formspree-formbutton.js" defer></script>
     <script type="text/javascript">
 
+      // const buttons = {
+        // 1: document.querySelector('.bg_switcher_buttons:nth-child(1)'),
+        // 2: document.querySelector('.bg_switcher_buttons:nth-child(2)'),
+        // 3: document.querySelector('.bg_switcher_buttons:nth-child(3)'),
+        // 4: document.querySelector('.bg_switcher_buttons:nth-child(4)')
+      // };
+
       const buttons = {
-        1: document.querySelector('.bg_switcher_buttons:nth-child(1)'),
-        2: document.querySelector('.bg_switcher_buttons:nth-child(2)'),
-        3: document.querySelector('.bg_switcher_buttons:nth-child(3)'),
-        4: document.querySelector('.bg_switcher_buttons:nth-child(4)')
+        1: document.querySelector('#bg_switcher_button1 img'),
+        2: document.querySelector('#bg_switcher_button2 img'),
+        3: document.querySelector('#bg_switcher_button3 img'),
+        4: document.querySelector('#bg_switcher_button4 img')
       };
 
       window.onload = function() {
@@ -265,8 +264,10 @@
       };
 
       const BASE_URL = "https://www.roadtripsandhikes.org/images/";
-      const ACTIVE_COLOR = 'rgba(255, 102, 51, .90)';
-      const INACTIVE_COLOR = '#FFF';
+      // const ACTIVE_COLOR = 'rgba(255, 102, 51, .90)';
+      // const INACTIVE_COLOR = '#FFF';
+      const ACTIVE_IMG = "https://www.roadtripsandhikes.org/images/active.png";
+      const INACTIVE_IMG = "https://www.roadtripsandhikes.org/images/inactive.png";
 
       // Optional: Even cleaner if you can pass button elements instead of globals
       function changeBackgroundImageV2(bgId, buttons = {}) {
@@ -364,8 +365,11 @@
         }, 650);
 
         // Update button colors
-        Object.entries(buttons).forEach(([id, button]) => {
-          button.style.color = Number(id) === bgId ? ACTIVE_COLOR : INACTIVE_COLOR;
+        // Object.entries(buttons).forEach(([id, button]) => {
+          // button.style.color = Number(id) === bgId ? ACTIVE_COLOR : INACTIVE_COLOR;
+        // });
+        Object.entries(buttons).forEach(([id, img]) => {
+          img.src = Number(id) === bgId ? ACTIVE_IMG : INACTIVE_IMG;
         });
       }
     </script>

@@ -86,7 +86,7 @@ a.header_links:active {
     font-size: 25px;
     color: #FFF;
     cursor: pointer;
-    /*padding: 3px;*/ /* only used when using imgs for symbols */
+    padding: 3px;*/ /* only used when using imgs for symbols */
 }
 .bg_switcher_buttons:nth-child(1) {
     color: rgba(255, 102, 51, .90);
