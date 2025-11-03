@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <style>
+        #backgroundFixed, .wrapper, .hero {
+            background-color: transparent !important;
+        }
+    </style>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
@@ -41,7 +46,7 @@
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg">
-    <link rel="stylesheet" href="css/styles.css?202511022">
+    <link rel="stylesheet" href="css/styles.css?20251103">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
   </head>
   <body>
@@ -60,11 +65,10 @@
             <a id="bg_switcher_button4" class="bg_switcher_buttons" onclick="changeBackgroundImageCrossfade(4,buttons);"><img src="https://www.roadtripsandhikes.org/images/inactive.png"></a>
         </div>
     </header>
-    <div id="backgroundFixed"></div>
+    <div id="backgroundFixed" style="background-color: transparent;"></div>
     <div class="wrapper">
       <div class="hero">
         <div class="hero_text">
-          <!-- <div class="hero_title center_text">Hi, I'm Larry Moiola.</div> -->
           <div class="hero_subtitle center_text">Hi, I'm Larry Moiola. I travel & hike to find awesome places to photograph and write about.</div>
         </div><!-- end hero_text div -->
         <div id="hero_title_card">
@@ -196,13 +200,6 @@
     <script src="js/formspree-formbutton.js" defer></script>
     <script type="text/javascript">
 
-      // const buttons = {
-        // 1: document.querySelector('.bg_switcher_buttons:nth-child(1)'),
-        // 2: document.querySelector('.bg_switcher_buttons:nth-child(2)'),
-        // 3: document.querySelector('.bg_switcher_buttons:nth-child(3)'),
-        // 4: document.querySelector('.bg_switcher_buttons:nth-child(4)')
-      // };
-
       const buttons = {
         1: document.querySelector('#bg_switcher_button1 img'),
         2: document.querySelector('#bg_switcher_button2 img'),
@@ -264,62 +261,9 @@
       };
 
       const BASE_URL = "https://www.roadtripsandhikes.org/images/";
-      // const ACTIVE_COLOR = 'rgba(255, 102, 51, .90)';
-      // const INACTIVE_COLOR = '#FFF';
       const ACTIVE_IMG = "https://www.roadtripsandhikes.org/images/active.png";
       const INACTIVE_IMG = "https://www.roadtripsandhikes.org/images/inactive.png";
 
-      // Optional: Even cleaner if you can pass button elements instead of globals
-      function changeBackgroundImageV2(bgId, buttons = {}) {
-        // Get the background config (handle random selection if it's an array)
-        let bgConfig = backgrounds[bgId];
-        if (Array.isArray(bgConfig)) {
-          bgConfig = bgConfig[Math.floor(Math.random() * bgConfig.length)];
-        }
-
-        if (!bgConfig) return;
-
-        // Update title
-        document.getElementById('hero_title_card').innerHTML = bgConfig.title;
-
-        // Update background image based on screen size
-        const isMobile = window.matchMedia('(max-width: 414px)').matches;
-        const imageFile = isMobile ? bgConfig.mobile : bgConfig.desktop;
-        backgroundFixed.style.backgroundImage = `url("${BASE_URL}${imageFile}")`;
-
-        // Update button colors
-        Object.entries(buttons).forEach(([id, button]) => {
-          button.style.color = Number(id) === bgId ? ACTIVE_COLOR : INACTIVE_COLOR;
-        });
-      }
-      // OPTION 2: Simple fade-out/fade-in (V2)
-      function changeBackgroundImageV3(bgId, buttons = {}) {
-        let bgConfig = backgrounds[bgId];
-        if (Array.isArray(bgConfig)) {
-          bgConfig = bgConfig[Math.floor(Math.random() * bgConfig.length)];
-        }
-
-        if (!bgConfig) return;
-
-        // Fade out
-        backgroundFixed.classList.add('fade-out');
-
-        // Wait for fade-out to complete, then change image and fade in
-        setTimeout(() => {
-          document.getElementById('hero_title_card').innerHTML = bgConfig.title;
-
-          const isMobile = window.matchMedia('(max-width: 414px)').matches;
-          const imageFile = isMobile ? bgConfig.mobile : bgConfig.desktop;
-          backgroundFixed.style.backgroundImage = `url("${BASE_URL}${imageFile}")`;
-
-          Object.entries(buttons).forEach(([id, button]) => {
-            button.style.color = Number(id) === bgId ? ACTIVE_COLOR : INACTIVE_COLOR;
-          });
-
-          // Fade back in
-          backgroundFixed.classList.remove('fade-out');
-        }, 900); // Match this to your CSS transition duration
-      }
       // OPTION 3: Cross-fade with overlay (V2) - smoother, no flash
       function changeBackgroundImageCrossfade(bgId, buttons = {}) {
         let bgConfig = backgrounds[bgId];
@@ -341,10 +285,10 @@
         overlay.style.position = 'absolute';
         overlay.style.top = '0';
         overlay.style.left = '0';
-        overlay.style.width = '100vw';
-        overlay.style.height = '100vh';
+        overlay.style.right = '0';  // Add
+        overlay.style.bottom = '0';  // Add
         overlay.style.backgroundImage = newImageUrl;
-        overlay.style.backgroundSize = '100vw 100vh';
+        overlay.style.backgroundSize = 'cover';
         overlay.style.backgroundPosition = 'center';
         overlay.style.opacity = '0';
         overlay.style.transition = 'opacity 0.6s ease-in-out';
@@ -365,9 +309,6 @@
         }, 650);
 
         // Update button colors
-        // Object.entries(buttons).forEach(([id, button]) => {
-          // button.style.color = Number(id) === bgId ? ACTIVE_COLOR : INACTIVE_COLOR;
-        // });
         Object.entries(buttons).forEach(([id, img]) => {
           img.src = Number(id) === bgId ? ACTIVE_IMG : INACTIVE_IMG;
         });
