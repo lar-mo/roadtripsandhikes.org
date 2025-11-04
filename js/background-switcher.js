@@ -12,35 +12,35 @@
         1: {
           title: "Columbia River Gorge<br>from Beacon Rock, Washington",
           desktop: "beacon-rock.jpg",
-          mobile: "beacon-rock-1000x2000.jpg"
+          mobile: "beacon-rock.jpg"
         },
         2: {
           title: "Fort Rock State Natural Area<br>Lake County, Oregon",
           desktop: "fort-rock.jpg",
-          mobile: "fort-rock-1000x2000.jpg"
+          mobile: "fort-rock.jpg"
         },
         3: [
           {
             title: "Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest",
             desktop: "msh-ne-side.jpg",
-            mobile: "msh-ne-side-1000x2000.jpg"
+            mobile: "msh-ne-side.jpg"
           },
           {
             title: "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon",
             desktop: "no-name-lake-bg.jpg",
-            mobile: "no-name-lake-bg-1000x2000.jpg"
+            mobile: "no-name-lake-bg.jpg"
           }
         ],
         4: [
           {
             title: "Mount St. Helens Summit / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest",
             desktop: "msh-summit-bg.jpg",
-            mobile: "msh-summit-bg-1000x2000.jpg"
+            mobile: "msh-summit-bg.jpg"
           },
           {
             title: "Cascade Head Marine Reserve<br>Lincoln City, Oregon",
             desktop: "lincoln-city.jpg",
-            mobile: "lincoln-city-1000x2000.jpg"
+            mobile: "lincoln-city.jpg"
           }
         ]
       };
