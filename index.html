@@ -17,7 +17,7 @@
       crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script src="js/header-anim.js?20210811"></script>
+    <script src="js/header-anim.js?20251103"></script>
     <script src="js/flip-card.js?20210807"></script>
     <script src="js/header-resizer.js?20221210"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.min.js"></script>
@@ -32,20 +32,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="https://lar-mo.com/images/lar-mo_favicon.png" />
-    <link rel="preload" as="image" href="https://lar-mo.com/images/lar-mo_favicon_bw.png">
-    <link rel="preload" as="image" href="https://lar-mo.com/images/lar-mo_favicon_old.png">
+    <link rel="preload" as="image" href="https://lar-mo.com/images/lar-mo_favicon.png">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/beacon-rock.jpg">
-    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/beacon-rock-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/fort-rock.jpg">
-    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/fort-rock-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/lincoln-city.jpg">
-    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/lincoln-city-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-ne-side.jpg">
-    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-ne-side-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/no-name-lake-bg.jpg">
-    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg">
-    <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg">
+    <link rel="prefetch" as="image" href="https://lar-mo.com/images/lar-mo_favicon_bw.png">
+    <link rel="prefetch" as="image" href="https://lar-mo.com/images/lar-mo_favicon_old.png">
+    <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/beacon-rock-1000x2000.jpg">
+    <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/fort-rock-1000x2000.jpg">
+    <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/lincoln-city-1000x2000.jpg">
+    <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/msh-ne-side-1000x2000.jpg">
+    <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/no-name-lake-bg-1000x2000.jpg">
+    <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg-1000x2000.jpg">
     <link rel="stylesheet" href="css/styles.css?20251103">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
   </head>
@@ -59,10 +60,10 @@
             </h1>
         </div>
         <div class="bg_switcher">
-            <a id="bg_switcher_button1" class="bg_switcher_buttons" onclick="changeBackgroundImageCrossfade(1,buttons);"><img src="https://www.roadtripsandhikes.org/images/active.png"></a>
-            <a id="bg_switcher_button2" class="bg_switcher_buttons" onclick="changeBackgroundImageCrossfade(2,buttons);"><img src="https://www.roadtripsandhikes.org/images/inactive.png"></a>
-            <a id="bg_switcher_button3" class="bg_switcher_buttons" onclick="changeBackgroundImageCrossfade(3,buttons);"><img src="https://www.roadtripsandhikes.org/images/inactive.png"></a>
-            <a id="bg_switcher_button4" class="bg_switcher_buttons" onclick="changeBackgroundImageCrossfade(4,buttons);"><img src="https://www.roadtripsandhikes.org/images/inactive.png"></a>
+            <a id="bg_switcher_button1" class="bg_switcher_buttons" onclick="changeBackgroundImageCrossfade(1);"><img src="https://www.roadtripsandhikes.org/images/active.png"></a>
+            <a id="bg_switcher_button2" class="bg_switcher_buttons" onclick="changeBackgroundImageCrossfade(2);" onmouseover="preload_image('https://www.roadtripsandhikes.org/images/fort-rock.jpg')"><img src="https://www.roadtripsandhikes.org/images/inactive.png"></a>
+            <a id="bg_switcher_button3" class="bg_switcher_buttons" onclick="changeBackgroundImageCrossfade(3);"><img src="https://www.roadtripsandhikes.org/images/inactive.png"></a>
+            <a id="bg_switcher_button4" class="bg_switcher_buttons" onclick="changeBackgroundImageCrossfade(4);"><img src="https://www.roadtripsandhikes.org/images/inactive.png"></a>
         </div>
     </header>
     <div id="backgroundFixed" style="background-color: transparent;"></div>
@@ -200,13 +201,6 @@
     <script src="js/formspree-formbutton.js" defer></script>
     <script type="text/javascript">
 
-      const buttons = {
-        1: document.querySelector('#bg_switcher_button1 img'),
-        2: document.querySelector('#bg_switcher_button2 img'),
-        3: document.querySelector('#bg_switcher_button3 img'),
-        4: document.querySelector('#bg_switcher_button4 img')
-      };
-
       window.onload = function() {
         var s = document.createElement('script');
         s.type = 'text/javascript';
@@ -221,98 +215,12 @@
         document.querySelector('#blog_section').className = 'visible blog_section';
       }
 
-      // Code refactor by Claude.ai
-      // Configuration object - easy to maintain and extend
-      const backgrounds = {
-        1: {
-          title: "Columbia River Gorge<br>from Beacon Rock, Washington",
-          desktop: "beacon-rock.jpg",
-          mobile: "beacon-rock-1000x2000.jpg"
-        },
-        2: {
-          title: "Fort Rock State Natural Area<br>Lake County, Oregon",
-          desktop: "fort-rock.jpg",
-          mobile: "fort-rock-1000x2000.jpg"
-        },
-        3: [
-          {
-            title: "Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest",
-            desktop: "msh-ne-side.jpg",
-            mobile: "msh-ne-side-1000x2000.jpg"
-          },
-          {
-            title: "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon",
-            desktop: "no-name-lake-bg.jpg",
-            mobile: "no-name-lake-bg-1000x2000.jpg"
-          }
-        ],
-        4: [
-          {
-            title: "Mount St. Helens Summit / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest",
-            desktop: "msh-summit-bg.jpg",
-            mobile: "msh-summit-bg-1000x2000.jpg"
-          },
-          {
-            title: "Cascade Head Marine Reserve<br>Lincoln City, Oregon",
-            desktop: "lincoln-city.jpg",
-            mobile: "lincoln-city-1000x2000.jpg"
-          }
-        ]
-      };
-
-      const BASE_URL = "https://www.roadtripsandhikes.org/images/";
-      const ACTIVE_IMG = "https://www.roadtripsandhikes.org/images/active.png";
-      const INACTIVE_IMG = "https://www.roadtripsandhikes.org/images/inactive.png";
-
-      // OPTION 3: Cross-fade with overlay (V2) - smoother, no flash
-      function changeBackgroundImageCrossfade(bgId, buttons = {}) {
-        let bgConfig = backgrounds[bgId];
-        if (Array.isArray(bgConfig)) {
-          bgConfig = bgConfig[Math.floor(Math.random() * bgConfig.length)];
-        }
-
-        if (!bgConfig) return;
-
-        // Update title immediately
-        document.getElementById('hero_title_card').innerHTML = bgConfig.title;
-
-        const isMobile = window.matchMedia('(max-width: 414px)').matches;
-        const imageFile = isMobile ? bgConfig.mobile : bgConfig.desktop;
-        const newImageUrl = `url("${BASE_URL}${imageFile}")`;
-
-        // Create a temporary overlay div for the new image
-        const overlay = document.createElement('div');
-        overlay.style.position = 'absolute';
-        overlay.style.top = '0';
-        overlay.style.left = '0';
-        overlay.style.right = '0';  // Add
-        overlay.style.bottom = '0';  // Add
-        overlay.style.backgroundImage = newImageUrl;
-        overlay.style.backgroundSize = 'cover';
-        overlay.style.backgroundPosition = 'center';
-        overlay.style.opacity = '0';
-        overlay.style.transition = 'opacity 0.6s ease-in-out';
-        overlay.style.zIndex = '1';
-
-        backgroundFixed.style.position = 'fixed';
-        backgroundFixed.appendChild(overlay);
-
-        // Trigger fade-in
-        setTimeout(() => {
-          overlay.style.opacity = '1';
-        }, 10);
-
-        // After fade completes, swap images and remove overlay
-        setTimeout(() => {
-          backgroundFixed.style.backgroundImage = newImageUrl;
-          backgroundFixed.removeChild(overlay);
-        }, 650);
-
-        // Update button colors
-        Object.entries(buttons).forEach(([id, img]) => {
-          img.src = Number(id) === bgId ? ACTIVE_IMG : INACTIVE_IMG;
-        });
+      function preload_image(im_url) {
+        let img = new Image();
+        img.src = im_url;
       }
+
     </script>
+    <script src="js/background-switcher.js?20251103"></script>
   </body>
 </html>
