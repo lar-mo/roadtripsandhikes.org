@@ -61,9 +61,9 @@
         // Update title immediately
         document.getElementById('hero_title_card').innerHTML = bgConfig.title;
 
-        const isMobile = window.matchMedia('(max-width: 414px)').matches;
-        const imageFile = isMobile ? bgConfig.mobile : bgConfig.desktop;
-        const newImageUrl = `url(${BASE_URL}${imageFile})`;
+        // const isMobile = window.matchMedia('(max-width: 414px)').matches;
+        // const imageFile = isMobile ? bgConfig.mobile : bgConfig.desktop;
+        const newImageUrl = `url(${BASE_URL}${bgConfig.desktop})`;
 
         // Create a temporary overlay div for the new image
         const overlay = document.createElement('div');
