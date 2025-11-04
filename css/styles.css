@@ -12,18 +12,15 @@ html, body {
 
 #backgroundFixed {
     background-image: url(https://www.roadtripsandhikes.org/images/beacon-rock.jpg);
-    /*background-size: 100vw 100vh;*/
-    background-size: cover;  /* ← Changed from 100vw 100vh */
-    background-position: center;  /* ← Added this */
-    background-repeat: no-repeat;  /* ← Added this for safety */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     background-color: transparent !important;
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;  /* ← Add this */
-    bottom: 0;  /* ← Add this */
-    /*height: 100vh;*/
-    /*width: 100vw;*/
+    right: 0;
+    bottom: 0;
     z-index: -1;
     transition: opacity 0.9s ease-in-out;
 }
@@ -37,13 +34,9 @@ h1 {
 }
 h2 {
     color: #f9f9f9;
-    /* margin: 0; */
-    /* padding: 0 15px 15px; */
     font-size: 1.2em;
 }
 header {
-    /*background-color: rgba(128, 0, 0, 1);*/
-    /*background-color: transparent !important;*/
     color: #f9f9f9;
     top: 0;
     position: fixed;
@@ -58,7 +51,6 @@ header {
 }
 .header_links {
     text-decoration: none;
-    /* text-shadow: 4px 4px 8px #222; */
 }
 a.header_links:link,
 a.header_links:visited {
@@ -321,8 +313,6 @@ h3 a {
     width: 100vw;
     border: 0;
     margin-bottom: 30px;
-    /* margin-left:auto; */
-    /* margin-right:auto; */
 }
 
 .post_wrapper {
@@ -444,8 +434,6 @@ h3 a {
     .hero_text {
         color: #fff;
         text-shadow: 4px 4px 8px #222;
-        /* padding-top: calc(100vh * 5/16); */
-        /* margin-bottom: calc(100vh * 11/16); */
         width: 90vw;
         font-weight: bold;
     }
@@ -477,16 +465,6 @@ h3 a {
         box-sizing: border-box;
         font-size: 90%;
     }
-
-    /* Styles for portrait orientation */
-    @media (orientation: portrait) {
-        /*#backgroundFixed {
-            background-size: cover;
-            background-color: transparent !important;
-            background-size: cover;
-            background-position: center;
-        }*/
-    }
 }
 
 @media all and (max-width: 992px) {
@@ -506,17 +484,6 @@ h3 a {
         height: calc(var(--vh, 1vh) * 100);
         z-index: 1;
     }
-
-    /* Styles for portrait orientation */
-  @media (orientation: portrait) {
-      /*#backgroundFixed {
-          background-size: cover;
-          background-image: url(https://www.roadtripsandhikes.org/images/beacon-rock-1000x2000.jpg);
-          background-color: transparent !important;
-          background-size: cover;
-          background-position: center;
-      }*/
-  }
 }
 
 @media all and (max-width: 768px) {
@@ -567,9 +534,6 @@ h3 a {
         font-size: 4.2em;
         width: 95vw;
     }
-    /*.wrapper {
-        background: #FFF;
-    }*/
     .post_wrapper {
         flex-direction: column;
     }
@@ -599,12 +563,6 @@ h3 a {
     .post_img {
         padding-bottom: 15px;
     }
-    /*#backgroundFixed {
-         background-image: url(https://www.roadtripsandhikes.org/images/beacon-rock-1000x2000.jpg);
-         background-color: transparent !important;
-         background-size: cover;
-         background-position: center;
-    }*/
     .hero_text {
         padding-top: calc(100vh * 1.75 / 8);
         margin-bottom: calc(100vh * 6.25 / 8);
