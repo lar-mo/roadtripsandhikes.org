@@ -570,6 +570,9 @@ h3 a {
     .bg_switcher {
         margin-right: 25px;
     }
+    #bg_switcher_button3, #bg_switcher_button4 {
+        display: none;
+    }
 }
 
 @media all and (max-width: 375px) {
