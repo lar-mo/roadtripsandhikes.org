@@ -339,13 +339,21 @@ h3 a {
     justify-content: space-between;
 }
 
-.view_post {
+.view_post, .past_years {
     padding-top: 15px;
 }
 
 .view_post > a {
     text-align: right;
+}
+
+.view_post > a:link, .view_post > a:active, .view_post > a:visited,
+.past_years > a:link, .past_years > a:active, .past_years > a:visited{
     color: #fff;
+}
+
+.view_post > a:hover, .past_years > a:hover {
+    color: #f63;
 }
 
 #yir2021 {
