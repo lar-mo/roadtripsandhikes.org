@@ -10,7 +10,7 @@
 
       const backgrounds = {
         1: {
-          title: "Columbia River Gorge<br>from Beacon Rock, Washington",
+          title: "Columbia River Gorge<br>Beacon Rock State Park, Washington",
           desktop: "beacon-rock.jpg",
           mobile: "beacon-rock.jpg"
         },
@@ -26,7 +26,7 @@
             mobile: "pinnacle-peak.jpg"
           },
           {
-            title: "Phlox Point & Hamilton Mountain<br>Beacon Rock State Park, Washington",
+            title: "Phlox Point & Hardy Ridge<br>Beacon Rock State Park, Washington",
             desktop: "phlox-point-brsp.jpg",
             mobile: "phlox-point-brsp.jpg"
           }
