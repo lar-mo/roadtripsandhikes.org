@@ -34,10 +34,14 @@
     <link rel="shortcut icon" href="https://lar-mo.com/images/lar-mo_favicon.png" />
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/beacon-rock.jpg">
     <link rel="preload" as="image" href="https://www.roadtripsandhikes.org/images/fort-rock.jpg">
+    <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/pinnacle-peak.jpg">
+    <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/phlox-point-brsp.jpg">
     <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/msh-ne-side.jpg">
     <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/no-name-lake-bg.jpg">
+    <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/msh-coldwater-peak.jpg">
     <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg">
     <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/lincoln-city.jpg">
+    <link rel="prefetch" as="image" href="https://www.roadtripsandhikes.org/images/butte-camp.jpg">
     <link rel="prefetch" as="image" href="https://lar-mo.com/images/lar-mo_favicon_bw.png">
     <link rel="prefetch" as="image" href="https://lar-mo.com/images/lar-mo_favicon_old.png">
     <link rel="stylesheet" href="css/styles.css?20251109">
@@ -63,20 +67,20 @@
                 id="bg_switcher_button2"
                 class="bg_switcher_buttons"
                 onclick="changeBackgroundImageCrossfade(2);"
-                onmouseover="preload_image('https://www.roadtripsandhikes.org/images/fort-rock.jpg')">
+                onmouseover="preload_image('https://www.roadtripsandhikes.org/images/fort-rock.jpg');preload_image('https://www.roadtripsandhikes.org/images/pinnacle-peak.jpg');preload_image('https://www.roadtripsandhikes.org/images/phlox-point-brsp.jpg');">
                 <img src="https://www.roadtripsandhikes.org/images/inactive.png">
             </a>
             <a id="bg_switcher_button3"
                 class="bg_switcher_buttons"
                 onclick="changeBackgroundImageCrossfade(3);"
-                onmouseover="preload_image('https://www.roadtripsandhikes.org/images/msh-ne-side.jpg');preload_image('https://www.roadtripsandhikes.org/images/no-name-lake-bg.jpg');">
+                onmouseover="preload_image('https://www.roadtripsandhikes.org/images/msh-ne-side.jpg');preload_image('https://www.roadtripsandhikes.org/images/no-name-lake-bg.jpg');preload_image('https://www.roadtripsandhikes.org/images/msh-coldwater-peak.jpg');">
                 <img src="https://www.roadtripsandhikes.org/images/inactive.png">
             </a>
             <a
                 id="bg_switcher_button4"
                 class="bg_switcher_buttons"
                 onclick="changeBackgroundImageCrossfade(4);"
-                onmouseover="preload_image('https://www.roadtripsandhikes.org/images/lincoln-city.jpg');preload_image('https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg');">
+                onmouseover="preload_image('https://www.roadtripsandhikes.org/images/lincoln-city.jpg');preload_image('https://www.roadtripsandhikes.org/images/msh-summit-bg.jpg');preload_image('https://www.roadtripsandhikes.org/images/butte-camp.jpg');">
                 <img src="https://www.roadtripsandhikes.org/images/inactive.png">
             </a>
         </div>
@@ -234,6 +238,6 @@
         img.src = im_url;
       }
     </script>
-    <script src="js/background-switcher.js?202511032"></script>
+    <script src="js/background-switcher.js?20251113"></script>
   </body>
 </html>

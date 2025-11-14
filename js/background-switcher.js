@@ -14,11 +14,23 @@
           desktop: "beacon-rock.jpg",
           mobile: "beacon-rock.jpg"
         },
-        2: {
-          title: "Fort Rock State Natural Area<br>Lake County, Oregon",
-          desktop: "fort-rock.jpg",
-          mobile: "fort-rock.jpg"
-        },
+        2: [
+          {
+            title: "Fort Rock State Natural Area<br>Lake County, Oregon",
+            desktop: "fort-rock.jpg",
+            mobile: "fort-rock.jpg"
+          },
+          {
+            title: "Pinnacle Peak from Plummer Peak<br>Mount Rainier National Park, Washington",
+            desktop: "pinnacle-peak.jpg",
+            mobile: "pinnacle-peak.jpg"
+          },
+          {
+            title: "Phlox Point & Hamilton Mountain<br>Beacon Rock State Park, Washington",
+            desktop: "phlox-point-brsp.jpg",
+            mobile: "phlox-point-brsp.jpg"
+          }
+        ],
         3: [
           {
             title: "Mount St. Helens / Loowit / Lawetlat'la<br>Gifford Pinchot National Forest",
@@ -29,6 +41,11 @@
             title: "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon",
             desktop: "no-name-lake-bg.jpg",
             mobile: "no-name-lake-bg.jpg"
+          },
+          {
+            title: "Mount St. Helens from Coldwater Peak<br>Gifford Pinchot National Forest",
+            desktop: "msh-coldwater-peak.jpg",
+            mobile: "msh-coldwater-peak.jpg"
           }
         ],
         4: [
@@ -41,6 +58,11 @@
             title: "Cascade Head Marine Reserve<br>Lincoln City, Oregon",
             desktop: "lincoln-city.jpg",
             mobile: "lincoln-city.jpg"
+          },
+          {
+            title: "Mount St. Helens from Butte Camp<br>Gifford Pinchot National Forest",
+            desktop: "butte-camp.jpg",
+            mobile:  "butte-camp.jpg"
           }
         ]
       };
