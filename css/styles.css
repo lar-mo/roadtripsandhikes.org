@@ -11,7 +11,8 @@ html, body {
 }
 
 #backgroundFixed {
-    background-image: url(https://www.roadtripsandhikes.org/images/beacon-rock.jpg);
+    /*background-image: url(https://www.roadtripsandhikes.org/images/beacon-rock.jpg);*/
+    background-color: #333;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
