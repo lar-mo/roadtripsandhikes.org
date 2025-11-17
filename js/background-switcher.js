@@ -39,7 +39,8 @@ let currentBgId = null;
 // Initialize: randomly pick one background on page load
 function initializeBackground() {
   // Pick random background (1-4)
-  const randomBgId = Math.floor(Math.random() * 4) + 1;
+  const isMobile = window.matchMedia('(max-width: 414px)').matches;
+  const randomBgId = isMobile ? Math.floor(Math.random() * 2) + 1 : Math.floor(Math.random() * 4) + 1;
 
   // Set it without animation (page load)
   const bgConfig = backgrounds[randomBgId];
