@@ -24,7 +24,7 @@ const backgrounds = {
     image: "no-name-lake-bg.jpg"
   },
   4: {
-    title: "Lewiston Highway<br>Paradise, Oregon",
+    title: "Lewiston Highway/Oregon Route 3<br>Paradise, Oregon",
     image: "lewiston-hwy-oregon.jpg"
   }
 };
