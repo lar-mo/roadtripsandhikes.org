@@ -63,7 +63,7 @@ cd "$PROJECT_ROOT" || {
 files=()
 for pattern in "${INCLUDE_PATTERNS[@]}"; do
     while IFS= read -r file; do
-        if [ -f "$file" ]; then
+        if [ -f "$file" ] && [[ ! "$file" =~ -bak ]] && [[ ! "$file" =~ -old ]]; then
             files+=("$file")
         fi
     done < <(compgen -G "$pattern" 2>/dev/null || true)
