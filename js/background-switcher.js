@@ -24,8 +24,8 @@ const backgrounds = {
     image: "no-name-lake-bg.jpg"
   },
   4: {
-    title: "Cascade Head Marine Reserve<br>Lincoln City, Oregon",
-    image: "lincoln-city.jpg"
+    title: "Lewiston Highway<br>Paradise, Oregon",
+    image: "lewiston-hwy-oregon.jpg"
   }
 };
 
