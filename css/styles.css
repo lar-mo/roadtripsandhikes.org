@@ -190,15 +190,15 @@ a.header_links:active {
 }
 .section_title {
     width: 33.33%;
-    color: #333;
+    color: rgb(43,42,51); /* #333; */
     text-align: center;
 }
 .section_title > h1 {
-    color: #333;
+    color: rgb(43,42,51); /* #333; */
 }
 .section_text {
     width: 66.67%;
-    color: #333;
+    color: rgb(43,42,51); /* #333; */
     margin: 15px 75px 0;
 }
 .category_link {
@@ -377,7 +377,8 @@ h3 a {
 }
 
 .blog_section {
-    background-color: rgba(22, 22, 22, 0.5);
+    background-color: rgba(43, 42, 51, 0.6);
+     /*background-color: rgba(22,22,22,0.5);*/
     display: block;
     color: #fff;
     width: 78vw;
