@@ -181,7 +181,7 @@ a.header_links:active {
     -webkit-box-shadow: 3px 3px 5px 4px rgba(25, 25, 25, 0.4);
 }
 #footer_desc {
-    background-color: #333;
+    background-color: rgb(43,42,51);
 }
 .description_link {
     text-align: center;
