@@ -373,7 +373,7 @@ h3 a {
     border-radius: 6px;
     margin-right: 20px;
     object-fit: cover;
-    object-position: left;
+    object-position: right;
 }
 
 .blog_section {
