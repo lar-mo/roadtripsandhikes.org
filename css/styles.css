@@ -377,7 +377,7 @@ h3 a {
 }
 
 .blog_section {
-    background-color: rgba(43, 42, 51, 0.6); /*rgba(22,22,22,0.5);*/
+    background-color: rgba(43, 42, 51, 0.5); /*rgba(22,22,22,0.5);*/
     display: block;
     color: #fff;
     width: 78vw;
