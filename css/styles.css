@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     box-sizing: border-box;
     font-family: "Georama", sans-serif;
     margin: 0;
@@ -26,7 +27,7 @@ html, body {
     transition: opacity 0.9s ease-in-out;
 }
 #backgroundFixed.fade-out {
-  opacity: 0;
+    opacity: 0;
 }
 h1 {
     color: #f9f9f9;
@@ -84,7 +85,7 @@ a.header_links:active {
 .hero {
     height: 140vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 140);
-    background: none;  /* or background: transparent; */
+    background: none; /* or background: transparent; */
     position: relative;
     z-index: 1;
 }
@@ -181,7 +182,7 @@ a.header_links:active {
     -webkit-box-shadow: 3px 3px 5px 4px rgba(25, 25, 25, 0.4);
 }
 #footer_desc {
-    background-color: rgb(43,42,51);
+    background-color: rgb(43, 42, 51);
 }
 .description_link {
     text-align: center;
@@ -190,15 +191,15 @@ a.header_links:active {
 }
 .section_title {
     width: 33.33%;
-    color: rgb(43,42,51); /* #333; */
+    color: rgb(43, 42, 51); /* #333; */
     text-align: center;
 }
 .section_title > h1 {
-    color: rgb(43,42,51); /* #333; */
+    color: rgb(43, 42, 51); /* #333; */
 }
 .section_text {
     width: 66.67%;
-    color: rgb(43,42,51); /* #333; */
+    color: rgb(43, 42, 51); /* #333; */
     margin: 15px 75px 0;
 }
 .category_link {
@@ -340,7 +341,8 @@ h3 a {
     justify-content: space-between;
 }
 
-.view_post, .past_years {
+.view_post,
+.past_years {
     padding-top: 15px;
 }
 
@@ -348,12 +350,17 @@ h3 a {
     text-align: right;
 }
 
-.view_post > a:link, .view_post > a:active, .view_post > a:visited,
-.past_years > a:link, .past_years > a:active, .past_years > a:visited{
+.view_post > a:link,
+.view_post > a:active,
+.view_post > a:visited,
+.past_years > a:link,
+.past_years > a:active,
+.past_years > a:visited {
     color: #fff;
 }
 
-.view_post > a:hover, .past_years > a:hover {
+.view_post > a:hover,
+.past_years > a:hover {
     color: #f63;
 }
 
@@ -364,7 +371,7 @@ h3 a {
 .post_img {
     width: 250px;
     height: 250px;
-    padding-right: 15px;
+    padding-left: 15px;
 }
 
 #post_image {
@@ -378,7 +385,7 @@ h3 a {
 
 .blog_section {
     /*background-color: rgba(43, 42, 51, 0.5);*/
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     display: block;
     color: #fff;
     width: 78vw;
@@ -580,7 +587,8 @@ h3 a {
     .bg_switcher {
         margin-right: 40px;
     }
-    #bg_switcher_button3, #bg_switcher_button4 {
+    #bg_switcher_button3,
+    #bg_switcher_button4 {
         display: none;
     }
 }
