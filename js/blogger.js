@@ -210,8 +210,7 @@ if (statsIframe && statsContainer) {
   // Hide container by default
   statsContainer.style.display = 'none';
   
-  // Show container when iframe successfully loads with content
-  statsIframe.addEventListener('load', function() {
+  function checkAndShowIframe() {
     setTimeout(function() {
       try {
         // Try to check if iframe has content (will fail for cross-origin, but that's ok)
@@ -229,7 +228,17 @@ if (statsIframe && statsContainer) {
         console.log('Stats iframe loaded (cross-origin)');
       }
     }, 200);
-  });
+  }
+  
+  // Check if iframe already loaded (script loads after iframe)
+  if (statsIframe.contentWindow && statsIframe.contentWindow.document && statsIframe.contentWindow.document.readyState === 'complete') {
+    console.log('Stats iframe already loaded, checking now');
+    checkAndShowIframe();
+  } else {
+    // Iframe not loaded yet, attach listener
+    console.log('Stats iframe not loaded yet, attaching listener');
+    statsIframe.addEventListener('load', checkAndShowIframe);
+  }
   
   // Keep hidden if iframe fails to load
   statsIframe.addEventListener('error', function() {
