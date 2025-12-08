@@ -202,45 +202,37 @@ function getLatestPost() {
 
 getLatestPost();
 
-// Handle iframe stats module errors
+// Handle stats iframe - show only on successful load with content
 const statsIframe = document.getElementById('stats_module');
 const statsContainer = document.getElementById('stats_container');
 
 if (statsIframe && statsContainer) {
-  // Set a timeout to check if iframe loaded
-  let iframeLoaded = false;
+  // Hide container by default
+  statsContainer.style.display = 'none';
   
+  // Show container when iframe successfully loads with content
   statsIframe.addEventListener('load', function() {
-    iframeLoaded = true;
-    try {
-      // Try to access iframe content to check for error pages
-      const iframeDoc = statsIframe.contentDocument || statsIframe.contentWindow.document;
-      const iframeBody = iframeDoc.body;
-      
-      // Check if the iframe contains error text
-      if (iframeBody && iframeBody.textContent.includes('Service Unavailable')) {
-        // Hide the stats container if there's an error
-        statsContainer.style.display = 'none';
-        console.log('Stats API unavailable');
+    setTimeout(function() {
+      try {
+        // Try to check if iframe has content (will fail for cross-origin, but that's ok)
+        const iframeDoc = statsIframe.contentDocument || statsIframe.contentWindow.document;
+        if (iframeDoc && iframeDoc.body && iframeDoc.body.innerHTML.trim() !== '') {
+          // Has content, show it
+          statsContainer.style.display = 'block';
+          console.log('Stats iframe loaded successfully');
+        } else {
+          console.log('Stats iframe empty - keeping hidden');
+        }
+      } catch (e) {
+        // Cross-origin - can't access content, assume it's valid and show it
+        statsContainer.style.display = 'block';
+        console.log('Stats iframe loaded (cross-origin)');
       }
-    } catch (e) {
-      // Cross-origin restriction - assume it's okay if we can't access
-      // The iframe loaded, just can't check contents due to CORS
-      console.log('Stats iframe loaded (cross-origin)');
-    }
+    }, 200);
   });
   
+  // Keep hidden if iframe fails to load
   statsIframe.addEventListener('error', function() {
-    // Hide the stats container on error
-    statsContainer.style.display = 'none';
     console.log('Stats iframe failed to load');
   });
-  
-  // Fallback: Hide if not loaded after 10 seconds
-  setTimeout(function() {
-    if (!iframeLoaded) {
-      statsContainer.style.display = 'none';
-      console.log('Stats iframe timeout');
-    }
-  }, 10000);
 }
