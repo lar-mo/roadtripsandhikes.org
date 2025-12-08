@@ -103,6 +103,12 @@ function loadMap(lng,lat,name,token) {
 function getLatestPost() {
   axios.get(bloggerv3_url)
   .then(function (response) {
+    // Show the blog section on successful load
+    const blogSection = document.getElementById('blog_section');
+    if (blogSection) {
+      blogSection.classList.remove('hidden');
+    }
+    
     let resp = response.data;
     // console.log(resp);
     let image_url = resp.latest_post.image_url;
@@ -186,7 +192,55 @@ function getLatestPost() {
     // setTimeout(function() {
     loadMap(post_location_lng,post_location_lat,post_location_name,mba);
     // }, 4000)
+  })
+  .catch(function (error) {
+    // Silently fail - just don't show the blog section
+    console.log('Blog API unavailable:', error.message);
+    // Keep blog_section hidden by not removing the 'hidden' class
   });
 }
 
 getLatestPost();
+
+// Handle iframe stats module errors
+const statsIframe = document.getElementById('stats_module');
+const statsContainer = document.getElementById('stats_container');
+
+if (statsIframe && statsContainer) {
+  // Set a timeout to check if iframe loaded
+  let iframeLoaded = false;
+  
+  statsIframe.addEventListener('load', function() {
+    iframeLoaded = true;
+    try {
+      // Try to access iframe content to check for error pages
+      const iframeDoc = statsIframe.contentDocument || statsIframe.contentWindow.document;
+      const iframeBody = iframeDoc.body;
+      
+      // Check if the iframe contains error text
+      if (iframeBody && iframeBody.textContent.includes('Service Unavailable')) {
+        // Hide the stats container if there's an error
+        statsContainer.style.display = 'none';
+        console.log('Stats API unavailable');
+      }
+    } catch (e) {
+      // Cross-origin restriction - assume it's okay if we can't access
+      // The iframe loaded, just can't check contents due to CORS
+      console.log('Stats iframe loaded (cross-origin)');
+    }
+  });
+  
+  statsIframe.addEventListener('error', function() {
+    // Hide the stats container on error
+    statsContainer.style.display = 'none';
+    console.log('Stats iframe failed to load');
+  });
+  
+  // Fallback: Hide if not loaded after 10 seconds
+  setTimeout(function() {
+    if (!iframeLoaded) {
+      statsContainer.style.display = 'none';
+      console.log('Stats iframe timeout');
+    }
+  }, 10000);
+}
