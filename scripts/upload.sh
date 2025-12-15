@@ -138,6 +138,65 @@ else
     done
 fi
 
+# Function to update cachebuster in index.html
+update_cachebuster() {
+    local file=$1
+    local git_hash=$2
+    local index_file="index.html"
+    
+    # Determine the pattern to match based on file type
+    if [[ "$file" == css/* ]]; then
+        local filename=$(basename "$file")
+        # Match: href="css/filename.css?ANYTHING"
+        sed -i.bak "s|href=\"css/${filename}?[^\"]*\"|href=\"css/${filename}?${git_hash}\"|g" "$index_file"
+    elif [[ "$file" == js/* ]]; then
+        local filename=$(basename "$file")
+        # Match: src="js/filename.js?ANYTHING"
+        sed -i.bak "s|src=\"js/${filename}?[^\"]*\"|src=\"js/${filename}?${git_hash}\"|g" "$index_file"
+    fi
+    
+    # Remove backup file
+    rm -f "${index_file}.bak"
+}
+
+# Check if any CSS or JS files are selected and get git hash
+needs_index_update=false
+git_hash=""
+css_js_files=()
+
+for file in "${selected_files[@]}"; do
+    if [[ "$file" == css/* ]] || [[ "$file" == js/* ]]; then
+        needs_index_update=true
+        css_js_files+=("$file")
+    fi
+done
+
+# Get git hash if we need to update cachebusters
+if [ "$needs_index_update" = true ]; then
+    git_hash=$(git rev-parse --short HEAD 2>/dev/null)
+    
+    if [ -z "$git_hash" ]; then
+        echo -e "${YELLOW}Warning: Not a git repository. Using timestamp instead.${NC}"
+        git_hash=$(date '+%Y%m%d%H%M%S')
+    fi
+    
+    echo ""
+    echo -e "${BLUE}Detected CSS/JS files - will auto-update cachebusters in index.html${NC}"
+    echo -e "${BLUE}Using version: ${git_hash}${NC}"
+    
+    # Update cachebusters for each CSS/JS file
+    for file in "${css_js_files[@]}"; do
+        echo -e "  Updating cachebuster for: $file"
+        update_cachebuster "$file" "$git_hash"
+    done
+    
+    # Add index.html to upload list if not already included
+    if [[ ! " ${selected_files[@]} " =~ " ./index.html " ]] && [[ ! " ${selected_files[@]} " =~ " index.html " ]]; then
+        echo -e "${GREEN}  + Adding index.html to upload list${NC}"
+        selected_files+=("./index.html")
+    fi
+fi
+
 # Confirm selection
 echo ""
 echo -e "${GREEN}Files selected for upload:${NC}"
