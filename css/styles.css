@@ -435,9 +435,10 @@ h3 a {
 
 #img_map {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 15px;
     flex-shrink: 0;
+    align-items: flex-start;
 }
 
 @media all and (max-width: 2400px) and (min-width: 1921px) {
