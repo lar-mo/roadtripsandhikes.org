@@ -12,8 +12,8 @@ const buttons = {
 // Your 4 best backgrounds - one per button
 const backgrounds = {
   1: {
-    title: "Beacon Rock State Park<br>Columbia River Gorge, Washington",
-    image: "beacon-rock.jpg"
+    title: "Mitchell Point<br>Columbia River Gorge, Oregon",
+    image: "mitchell-point.jpg"
   },
   2: {
     title: "Fort Rock State Natural Area<br>Lake County, Oregon",

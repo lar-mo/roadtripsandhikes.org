@@ -89,6 +89,9 @@ a.header_links:active {
     position: relative;
     z-index: 1;
 }
+/*#title {
+    text-shadow: 4px 4px 8px #222;
+}*/
 .hero_text {
     color: #fff;
     text-shadow: 4px 4px 8px #222;
