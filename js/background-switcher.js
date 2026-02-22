@@ -10,18 +10,26 @@ const buttons = {
 };
 
 // Your 4 best backgrounds - one per button
+//   1: {
+  // title: "Mitchell Point<br>Columbia River Gorge, Oregon<br>&#8984; <i>45.700191, -121.614415</i>",
+  // image: "mitchell-point.jpg"
+// },
 //   2: {
   // title: "Fort Rock State Natural Area<br>Lake County, Oregon<br>&#8984; <i>43.373618, -121.073913</i>",
   // image: "fort-rock.jpg"
 // },
+//   1: {
+//   title: "Pinnacle & Unicorn Peaks from Plummer Peak<br>Mount Rainier, Washington<br>&#8984; <i>46.753530, -121.739475</i>",
+//   image: "pinnacle-peak.jpg"
+// },
 const backgrounds = {
   1: {
-    title: "Mitchell Point<br>Columbia River Gorge, Oregon<br>&#8984; <i>45.700191, -121.614415</i>",
-    image: "mitchell-point.jpg"
-  },
-  2: {
     title: "Dog Mountain<br>Columbia River Gorge, Washington<br>&#8984; <i>45.716792, -121.701922</i>",
     image: "dog-mountain.jpg"
+  },
+  2: {
+    title: "Columbia River Gorge<br>Beacon Rock State Park, Washington<br>&#8984; <i>45.633585, -122.022518</i>",
+    image: "beacon-rock.jpg"
   },
   3: {
     title: "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon<br>&#8984; <i>44.084072, -121.690227</i>",
