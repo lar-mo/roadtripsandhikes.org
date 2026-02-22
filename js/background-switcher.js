@@ -10,21 +10,25 @@ const buttons = {
 };
 
 // Your 4 best backgrounds - one per button
+//   2: {
+  // title: "Fort Rock State Natural Area<br>Lake County, Oregon<br>&#8984; <i>43.373618, -121.073913</i>",
+  // image: "fort-rock.jpg"
+// },
 const backgrounds = {
   1: {
-    title: "Mitchell Point<br>Columbia River Gorge, Oregon",
+    title: "Mitchell Point<br>Columbia River Gorge, Oregon<br>&#8984; <i>45.700191, -121.614415</i>",
     image: "mitchell-point.jpg"
   },
   2: {
-    title: "Fort Rock State Natural Area<br>Lake County, Oregon",
-    image: "fort-rock.jpg"
+    title: "Dog Mountain<br>Columbia River Gorge, Washington<br>&#8984; <i>45.716792, -121.701922</i>",
+    image: "dog-mountain.jpg"
   },
   3: {
-    title: "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon",
+    title: "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon<br>&#8984; <i>44.084072, -121.690227</i>",
     image: "no-name-lake-bg.jpg"
   },
   4: {
-    title: "Lewiston Highway/Oregon Route 3<br>Paradise, Oregon",
+    title: "Lewiston Highway/Oregon Route 3<br>Paradise, Oregon<br>&#8984; <i>45.974522, -117.271860</i>",
     image: "lewiston-hwy-oregon.jpg"
   }
 };
