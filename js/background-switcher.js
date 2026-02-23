@@ -32,7 +32,7 @@ const backgrounds = {
     image: "beacon-rock.jpg"
   },
   3: {
-    title: "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>44.084072, -121.690227</i>",
+    title: "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>44.083986, -121.689844</i>",
     image: "no-name-lake-bg.jpg"
   },
   4: {
