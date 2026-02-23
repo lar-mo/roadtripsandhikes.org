@@ -11,32 +11,32 @@ const buttons = {
 
 // Your 4 best backgrounds - one per button
 //   1: {
-  // title: "Mitchell Point<br>Columbia River Gorge, Oregon<br>&#8984; <i>45.700191, -121.614415</i>",
+  // title: "Mitchell Point<br>Columbia River Gorge, Oregon<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>45.700191, -121.614415</i>",
   // image: "mitchell-point.jpg"
 // },
 //   2: {
-  // title: "Fort Rock State Natural Area<br>Lake County, Oregon<br>&#8984; <i>43.373618, -121.073913</i>",
+  // title: "Fort Rock State Natural Area<br>Lake County, Oregon<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>43.373618, -121.073913</i>",
   // image: "fort-rock.jpg"
 // },
 //   1: {
-//   title: "Pinnacle & Unicorn Peaks from Plummer Peak<br>Mount Rainier, Washington<br>&#8984; <i>46.753530, -121.739475</i>",
+//   title: "Pinnacle & Unicorn Peaks from Plummer Peak<br>Mount Rainier, Washington<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>46.753530, -121.739475</i>",
 //   image: "pinnacle-peak.jpg"
 // },
 const backgrounds = {
   1: {
-    title: "Dog Mountain<br>Columbia River Gorge, Washington<br>&#8984; <i>45.716792, -121.701922</i>",
+    title: "Dog Mountain<br>Columbia River Gorge, Washington<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>45.716792, -121.701922</i>",
     image: "dog-mountain.jpg"
   },
   2: {
-    title: "Columbia River Gorge<br>Beacon Rock State Park, Washington<br>&#8984; <i>45.633585, -122.022518</i>",
+    title: "Columbia River Gorge<br>Beacon Rock State Park, Washington<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>45.633585, -122.022518</i>",
     image: "beacon-rock.jpg"
   },
   3: {
-    title: "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon<br>&#8984; <i>44.084072, -121.690227</i>",
+    title: "No Name Lake and Bend Glacier<br>Three Sisters Wilderness, Central Oregon<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>44.084072, -121.690227</i>",
     image: "no-name-lake-bg.jpg"
   },
   4: {
-    title: "Lewiston Highway/Oregon Route 3<br>Paradise, Oregon<br>&#8984; <i>45.974522, -117.271860</i>",
+    title: "Lewiston Highway/Oregon Route 3<br>Paradise, Oregon<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>45.974522, -117.271860</i>",
     image: "lewiston-hwy-oregon.jpg"
   }
 };
