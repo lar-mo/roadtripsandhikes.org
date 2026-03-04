@@ -74,13 +74,21 @@ function changeBackgroundImageCrossfade(bgId) {
   const bgConfig = backgrounds[bgId];
   if (!bgConfig) return;
 
-  // Update title immediately
-  document.getElementById('hero_title_card').innerHTML = bgConfig.title;
-
   const newImageUrl = `url(${BASE_URL}${bgConfig.image})`;
   const backgroundFixed = document.getElementById('backgroundFixed');
+  const titleCard = document.getElementById('hero_title_card');
 
-  // Create overlay for smooth transition
+  // Fade out the title text
+  titleCard.style.transition = 'opacity 0.3s ease-in-out';
+  titleCard.style.opacity = '0';
+
+  // Update title text halfway through the crossfade, then fade it back in
+  setTimeout(() => {
+    titleCard.innerHTML = bgConfig.title;
+    titleCard.style.opacity = '1';
+  }, 300);
+
+  // Create overlay for smooth background transition
   const overlay = document.createElement('div');
   overlay.style.position = 'absolute';
   overlay.style.top = '0';
