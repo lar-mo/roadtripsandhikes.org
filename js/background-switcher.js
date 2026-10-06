@@ -22,10 +22,14 @@ const buttons = {
 //   title: "Pinnacle & Unicorn Peaks from Plummer Peak<br>Mount Rainier, Washington<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>46.753530, -121.739475</i>",
 //   image: "pinnacle-peak.jpg"
 // },
+//   1: {
+//   title: "Dog Mountain<br>Columbia River Gorge, Washington<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>45.716792, -121.701922</i>",
+//   image: "dog-mountain.jpg"
+// },
 const backgrounds = {
   1: {
-    title: "Dog Mountain<br>Columbia River Gorge, Washington<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>45.716792, -121.701922</i>",
-    image: "dog-mountain.jpg"
+    title: "Tam McArthur Rim<br>Three Sisters Wilderness, Central Oregon<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>44.092733, -121.643590</i>",
+    image: "tam-mcarthur-rim.jpg"
   },
   2: {
     title: "Columbia River Gorge<br>Beacon Rock State Park, Washington<br><img src=\"https://www.roadtripsandhikes.org/images/google_maps_pin_PNG76.png\" width=\"15\"> <i>45.633585, -122.022518</i>",
